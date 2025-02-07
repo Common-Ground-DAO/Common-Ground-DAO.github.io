@@ -1,0 +1,24 @@
+{
+  "name": "common-ground-dao.github.io",
+  "version": "1.0.0",
+  "description": "This repository contains the source code for the Common Ground DAO website, built with Jekyll and hosted on GitHub Pages.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build:vendor": "rollup -c",
+    "watch:vendor": "rollup -c -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "chart.js": "^4.4.1",
+    "fuse.js": "^7.0.0",
+    "rollup": "^4.9.5"
+  },
+  "dependencies": {
+    "chartjs-chart-treemap": "^3.1.0"
+  }
+}

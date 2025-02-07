@@ -1,0 +1,291 @@
+<div class="wiki-search">
+    <div class="search-input-wrapper">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16">
+            <path fill="currentColor" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+        <input type="text" 
+               id="wiki-search-input" 
+               class="search-input"
+               placeholder="Search wiki..."
+               autocomplete="off"
+               aria-label="Search wiki">
+        <kbd class="search-shortcut">⌘K</kbd>
+    </div>
+
+    <div id="wiki-search-results" class="search-results">
+        <div class="search-results-header">
+            <span id="search-count" class="search-count">0 results</span>
+        </div>
+        <div class="search-results-list"></div>
+        <div class="search-empty-state">
+            <p>No results found</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.wiki-search {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 2.5rem;
+    font-size: var(--font-size-base);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    background: var(--background-color);
+    transition: all 0.2s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--brand-color);
+    box-shadow: 0 0 0 3px var(--brand-color-light);
+}
+
+.search-shortcut {
+    position: absolute;
+    right: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    background: var(--light-gray);
+    border-radius: 0.25rem;
+    pointer-events: none;
+}
+
+.search-results {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    right: 0;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-height: min(500px, calc(100vh - 12rem));
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.search-results.active {
+    display: block;
+}
+
+.search-results-header {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.search-result-item {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background 0.1s ease;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover,
+.search-result-item.active {
+    background: var(--light-gray);
+}
+
+/* Add a stronger visual indicator for keyboard navigation */
+.search-result-item.active {
+    background: var(--brand-color-light);
+}
+
+.result-title {
+    font-weight: var(--font-weight-medium);
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.result-category {
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    background: var(--light-gray);
+    padding: 0.125rem 0.375rem;
+    border-radius: 1rem;
+    display: inline-block;
+}
+
+.search-empty-state {
+    padding: 1.5rem 0.75rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    display: none;
+}
+
+.search-empty-state.active {
+    display: block;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    let searchIndex = [];
+    let fuse = null;
+
+    // Load search index
+    fetch('{{ "/search-index.json" | relative_url }}')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(text => {
+            try {
+                return JSON.parse(text);
+            } catch (e) {
+                console.error('Failed to parse search index:', e);
+                throw e;
+            }
+        })
+        .then(data => {
+            searchIndex = data;
+            fuse = new Fuse(searchIndex, {
+                keys: [
+                    { name: 'title', weight: 0.4 },
+                    { name: 'summary', weight: 0.3 },
+                    { name: 'content', weight: 0.2 },
+                    { name: 'category', weight: 0.1 }
+                ],
+                includeMatches: true,
+                threshold: 0.3,
+                distance: 100
+            });
+        })
+        .catch(error => {
+            console.error('Error loading search index:', error);
+            const searchInput = document.getElementById('wiki-search-input');
+            searchInput.placeholder = 'Search unavailable';
+            searchInput.disabled = true;
+            searchInput.style.cursor = 'not-allowed';
+        });
+
+    const searchInput = document.getElementById('wiki-search-input');
+    const searchResults = document.getElementById('wiki-search-results');
+    const resultsList = searchResults.querySelector('.search-results-list');
+    const searchCount = document.getElementById('search-count');
+    const emptyState = searchResults.querySelector('.search-empty-state');
+
+    function renderSearchResults(results) {
+        resultsList.innerHTML = '';
+        searchCount.textContent = `${results.length} result${results.length !== 1 ? 's' : ''}`;
+
+        if (results.length === 0) {
+            emptyState.classList.add('active');
+            return;
+        }
+
+        emptyState.classList.remove('active');
+
+        results.forEach(result => {
+            const item = document.createElement('div');
+            item.className = 'search-result-item';
+            item.dataset.url = result.item.url;
+
+            item.innerHTML = `
+                <div class="result-title">${result.item.title}</div>
+                <span class="result-category">${result.item.category}</span>
+            `;
+
+            item.addEventListener('click', () => {
+                window.location.href = result.item.url;
+            });
+
+            resultsList.appendChild(item);
+        });
+    }
+
+    searchInput.addEventListener('input', debounce(function(e) {
+        const query = e.target.value;
+        
+        if (!query || query.length < 2) {
+            searchResults.classList.remove('active');
+            return;
+        }
+
+        if (fuse) {
+            const results = fuse.search(query);
+            searchResults.classList.add('active');
+            renderSearchResults(results);
+        }
+    }, 200));
+
+    // Close search results when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+            searchResults.classList.remove('active');
+        }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+            e.preventDefault();
+            searchInput.focus();
+        }
+
+        if (searchResults.classList.contains('active')) {
+            const items = resultsList.querySelectorAll('.search-result-item');
+            const activeItem = resultsList.querySelector('.search-result-item.active');
+            let activeIndex = Array.from(items).indexOf(activeItem);
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (activeIndex < items.length - 1) {
+                    if (activeItem) activeItem.classList.remove('active');
+                    items[activeIndex + 1].classList.add('active');
+                    items[activeIndex + 1].scrollIntoView({ block: 'nearest' });
+                }
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (activeIndex > 0) {
+                    if (activeItem) activeItem.classList.remove('active');
+                    items[activeIndex - 1].classList.add('active');
+                    items[activeIndex - 1].scrollIntoView({ block: 'nearest' });
+                }
+            } else if (e.key === 'Enter' && activeItem) {
+                e.preventDefault();
+                window.location.href = activeItem.dataset.url;
+            }
+        }
+    });
+});
+
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+</script> 

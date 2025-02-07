@@ -1,0 +1,469 @@
+/* Wiki Layout */
+.wiki-container {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr) 300px;
+  gap: 2rem;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - var(--header-height));
+}
+
+/* Sidebar Navigation */
+.wiki-sidebar {
+  position: sticky;
+  top: calc(var(--header-height) + 2rem);
+  height: calc(100vh - var(--header-height) - 4rem);
+  overflow-y: auto;
+  padding-right: 1rem;
+  border-right: 1px solid var(--border-color);
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+.wiki-nav-search {
+  position: sticky;
+  top: 0;
+  background: var(--bg-color);
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  z-index: 10;
+}
+
+.wiki-nav-search input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.wiki-nav-search input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px var(--primary-color-alpha);
+  outline: none;
+}
+
+.wiki-nav-sections {
+  margin-bottom: 2rem;
+}
+
+.wiki-nav-section {
+  margin-bottom: 1.5rem;
+}
+
+.wiki-nav-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.wiki-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wiki-nav-item {
+  margin-bottom: 0.25rem;
+}
+
+.wiki-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  color: var(--text-color-light);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.wiki-nav-link:hover {
+  background-color: var(--hover-color);
+  color: var(--text-color);
+}
+
+.wiki-nav-item.active .wiki-nav-link {
+  background-color: var(--active-color);
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.wiki-nav-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.5rem;
+  background: var(--bg-color-dark);
+  color: var(--text-color-light);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Main Content */
+.wiki-content {
+  min-width: 0;
+  padding: 0 2rem;
+}
+
+.wiki-header {
+  margin-bottom: 3rem;
+}
+
+.wiki-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.wiki-summary {
+  font-size: 1.2rem;
+  color: var(--text-color-light);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Entry Cards */
+.entry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.entry-card {
+  background: var(--card-bg);
+  padding: 1.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.entry-card:hover {
+  border-color: var(--primary-color);
+  background: var(--card-hover-bg);
+  box-shadow: 0 4px 20px var(--shadow-color-hover);
+  transform: translateY(-2px);
+}
+
+.entry-card h3 {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.entry-card h3 a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.entry-card h3 a:hover {
+  color: var(--primary-color);
+}
+
+.entry-card p {
+  color: var(--text-color-light);
+  margin: 0 0 1.25rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Learning Paths */
+.path-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.path-card {
+  background: var(--bg-color-light);
+  padding: 1.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.path-card:hover {
+  border-color: var(--primary-color);
+  background: var(--card-bg);
+  box-shadow: 0 4px 20px var(--shadow-color-hover);
+}
+
+.path-card h3 {
+  color: var(--text-color);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+}
+
+.path-card p {
+  color: var(--text-color-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.path-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.path-step {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.path-step:hover {
+  transform: scale(1.1);
+  background: var(--primary-color-dark);
+}
+
+.path-step.active {
+  background: var(--primary-color-dark);
+  box-shadow: 0 0 0 3px var(--primary-color-alpha);
+}
+
+.path-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.path-link:hover {
+  background: var(--primary-color-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+/* Graph Sidebar */
+.wiki-graph-sidebar {
+  position: sticky;
+  top: calc(var(--header-height) + 2rem);
+  height: calc(100vh - var(--header-height) - 4rem);
+  overflow-y: auto;
+  padding-left: 1rem;
+  border-left: 1px solid var(--border-color);
+}
+
+/* Badges and Tags */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: white;
+  line-height: 1;
+}
+
+.difficulty-badge {
+  composes: badge;
+}
+
+.status-badge {
+  composes: badge;
+}
+
+.wiki-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  background: var(--bg-color-dark);
+  color: var(--text-color-light);
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.wiki-tag:hover {
+  background: var(--hover-color);
+  color: var(--text-color);
+  transform: translateY(-1px);
+}
+
+/* Metadata */
+.wiki-metadata-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.metadata-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.metadata-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666;
+}
+
+.metadata-value {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: white;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Wiki Body */
+.wiki-body {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.wiki-body h2 {
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #eee;
+}
+
+.wiki-body h3 {
+  font-size: 1.4rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.wiki-body ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.wiki-body li {
+  margin-bottom: 0.5rem;
+}
+
+/* Graph Container */
+#graph-container {
+  flex-grow: 1;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .wiki-container {
+    grid-template-columns: 250px 1fr;
+  }
+  
+  .wiki-graph-sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .wiki-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  
+  .wiki-sidebar {
+    display: none;
+  }
+  
+  .wiki-content {
+    padding: 0;
+  }
+  
+  .wiki-title {
+    font-size: 2rem;
+  }
+  
+  .entry-grid,
+  .path-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CSS Variables */
+:root {
+  --header-height: 60px;
+  
+  /* Primary Colors */
+  --primary-color: #2563eb;
+  --primary-color-light: #eff6ff;
+  --primary-color-dark: #1e40af;
+  --primary-color-alpha: rgba(37, 99, 235, 0.1);
+  
+  /* Text Colors */
+  --text-color: #111827;
+  --text-color-light: #4b5563;
+  --text-color-lighter: #6b7280;
+  
+  /* Background Colors */
+  --bg-color: #ffffff;
+  --bg-color-light: #f9fafb;
+  --bg-color-dark: #f3f4f6;
+  
+  /* Border Colors */
+  --border-color: #e5e7eb;
+  --border-color-dark: #d1d5db;
+  
+  /* Card Colors */
+  --card-bg: #ffffff;
+  --card-hover-bg: #f9fafb;
+  
+  /* Interactive Colors */
+  --hover-color: #f3f4f6;
+  --active-color: #eff6ff;
+  --shadow-color: rgba(0, 0, 0, 0.05);
+  --shadow-color-hover: rgba(0, 0, 0, 0.1);
+  
+  /* Status Colors */
+  --success-color: #059669;
+  --warning-color: #d97706;
+  --info-color: #2563eb;
+  --draft-color: #6b7280;
+} 

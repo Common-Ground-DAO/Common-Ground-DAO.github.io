@@ -1,0 +1,127 @@
+---
+layout: default
+title: Wiki
+---
+
+<div class="wiki-container">
+    {% include wiki_sidebar.html %}
+
+    <div class="wiki-content">
+        <header class="wiki-header">
+            <h1 class="wiki-title">Common Ground Wiki</h1>
+            <p class="wiki-summary">Explore the concepts, primitives, and mechanics that power the Common Ground ecosystem.</p>
+        </header>
+
+        <div class="wiki-sections">
+            <section class="wiki-section">
+                <h2>Core Concepts</h2>
+                <div class="wiki-grid">
+                    {% assign concept_pages = site.wiki | where_exp: "item", "item.category == 'concepts' and item.title != 'Index'" | sort: "weight" %}
+                    {% for page in concept_pages limit: 6 %}
+                    <a href="{{ page.url }}" class="wiki-card">
+                        <h3>{{ page.title }}</h3>
+                        <p>{{ page.summary }}</p>
+                    </a>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section class="wiki-section">
+                <h2>Technical Primitives</h2>
+                <div class="wiki-grid">
+                    {% assign primitive_pages = site.wiki | where_exp: "item", "item.category == 'primitives' and item.title != 'Index'" | sort: "weight" %}
+                    {% for page in primitive_pages limit: 6 %}
+                    <a href="{{ page.url }}" class="wiki-card">
+                        <h3>{{ page.title }}</h3>
+                        <p>{{ page.summary }}</p>
+                    </a>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section class="wiki-section">
+                <h2>System Mechanics</h2>
+                <div class="wiki-grid">
+                    {% assign mechanic_pages = site.wiki | where_exp: "item", "item.category == 'mechanics' and item.title != 'Index'" | sort: "weight" %}
+                    {% for page in mechanic_pages limit: 6 %}
+                    <a href="{{ page.url }}" class="wiki-card">
+                        <h3>{{ page.title }}</h3>
+                        <p>{{ page.summary }}</p>
+                    </a>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section class="wiki-section">
+                <h2>Glossary</h2>
+                <div class="wiki-grid">
+                    {% assign glossary_pages = site.wiki | where_exp: "item", "item.category == 'glossary' and item.title != 'Index'" | sort: "title" %}
+                    {% for page in glossary_pages limit: 6 %}
+                    <a href="{{ page.url }}" class="wiki-card">
+                        <h3>{{ page.title }}</h3>
+                        <p>{{ page.summary }}</p>
+                    </a>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<style>
+.wiki-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Additional styles specific to the wiki index */
+.wiki-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.wiki-section h2 {
+    font-size: var(--font-size-xl);
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.wiki-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.wiki-card {
+    background: var(--light-gray);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.wiki-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.wiki-card h3 {
+    font-size: var(--font-size-lg);
+    color: var(--text-color);
+    margin: 0;
+}
+
+.wiki-card p {
+    color: var(--text-secondary);
+    margin: 0;
+    flex-grow: 1;
+}
+</style> 
+

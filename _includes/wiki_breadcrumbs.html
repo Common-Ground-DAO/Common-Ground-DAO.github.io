@@ -1,0 +1,39 @@
+{% assign metadata = site.data.wiki_metadata %}
+
+<nav class="wiki-breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    <li>
+      <a href="/wiki">Wiki</a>
+    </li>
+    
+    {% if page.category %}
+    <li>
+      {% assign category = metadata.categories[page.category] %}
+      <a href="/wiki/categories/{{ page.category }}">{{ category.name }}</a>
+    </li>
+    {% endif %}
+    
+    {% if page.cluster and page.cluster != page.category %}
+    <li>
+      {% assign cluster = metadata.clusters[page.cluster] %}
+      <a href="/wiki/clusters/{{ page.cluster }}">{{ cluster.name }}</a>
+    </li>
+    {% endif %}
+    
+    <li aria-current="page">
+      {{ page.title }}
+    </li>
+  </ol>
+  
+  {% if page.learning_paths %}
+  <div class="wiki-context">
+    {% for path in page.learning_paths %}
+    {% assign path_data = metadata.learning_paths[path] %}
+    {% assign path_position = path_data.sequence | find_index: page.slug | plus: 1 %}
+    <span class="learning-path-badge" style="background-color: {{ path_data.color }}">
+      {{ path_data.name }} ({{ path_position }}/{{ path_data.sequence.size }})
+    </span>
+    {% endfor %}
+  </div>
+  {% endif %}
+</nav> 

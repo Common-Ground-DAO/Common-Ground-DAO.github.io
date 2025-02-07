@@ -1,0 +1,83 @@
+{% assign all_categories = site.wiki | map: "category" | compact | uniq | sort %}
+
+<aside class="wiki-sidebar">
+    <nav class="wiki-nav">
+        <!-- Breadcrumb Navigation -->
+        {% include wiki_breadcrumb.html %}
+
+        <!-- Search -->
+        {% include wiki_search.html %}
+
+        <!-- Categories -->
+        <div class="wiki-nav-section">
+            <h3>Categories</h3>
+            <ul>
+                {% for category in all_categories %}
+                <li>
+                    <a href="/wiki/categories/{{ category }}/" 
+                       class="{% if page.category == category %}active{% endif %}">
+                        {{ category | capitalize }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </nav>
+</aside>
+
+<style>
+.wiki-sidebar {
+    position: sticky;
+    top: 2rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
+}
+
+.wiki-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.wiki-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.wiki-sidebar::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 3px;
+}
+
+.wiki-nav-section {
+    margin-bottom: 2rem;
+}
+
+.wiki-nav-section h3 {
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.wiki-nav-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wiki-nav-section a {
+    display: block;
+    padding: 0.5rem;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 0.25rem;
+}
+
+.wiki-nav-section a:hover {
+    background: var(--light-gray);
+}
+
+.wiki-nav-section a.active {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+</style> 

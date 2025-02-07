@@ -1,0 +1,64 @@
+---
+layout: default
+---
+<div class="content-container">
+    <div class="content-header">
+        <h1 class="content-title">
+            <span class="stakeholder-emoji">{% if page.type == "person" %}👤{% else %}🏛️{% endif %}</span>
+            {{ page.name }}
+        </h1>
+    </div>
+    <hr>
+    <div class="content">
+        {% if page.type == "person" %}
+            <p class="stakeholder-role"><strong>Role:</strong> {{ page.role }}</p>
+            <p class="stakeholder-location"><strong>Location:</strong> {{ page.location }}</p>
+            
+            {% if page.expertise %}
+            <h2>Expertise</h2>
+            <ul>
+                {% for skill in page.expertise %}
+                <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {% else %}
+            <p class="stakeholder-type"><strong>Type:</strong> {{ page.type_of_entity }}</p>
+            <p class="stakeholder-legal"><strong>Legal Form:</strong> {{ page.legal_form }}</p>
+            {% if page.jurisdiction %}
+            <p class="stakeholder-jurisdiction"><strong>Jurisdiction:</strong> {{ page.jurisdiction }}</p>
+            {% endif %}
+            {% if page.founding_date %}
+            <p class="stakeholder-founded"><strong>Founded:</strong> {{ page.founding_date }}</p>
+            {% endif %}
+        {% endif %}
+
+        <h2>About</h2>
+        <p>{{ page.bio | default: page.description }}</p>
+
+        {% if page.representatives %}
+        <h2>Representatives</h2>
+        <ul class="stakeholder-representatives">
+            {% for rep_id in page.representatives %}
+            <li>{% stakeholder rep_id %}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if page.social %}
+        <h2>Connect</h2>
+        <ul class="stakeholder-social">
+            {% if page.social.twitter %}
+            <li><a href="https://twitter.com/{{ page.social.twitter }}" target="_blank">Twitter</a></li>
+            {% endif %}
+            {% if page.social.github %}
+            <li><a href="https://github.com/{{ page.social.github }}" target="_blank">GitHub</a></li>
+            {% endif %}
+        </ul>
+        {% endif %}
+
+        <div class="stakeholder-cta">
+            <a href="https://app.cg/c/{{ page.id }}/" class="button primary">View on Common Ground</a>
+        </div>
+    </div>
+</div> 

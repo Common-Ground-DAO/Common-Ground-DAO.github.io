@@ -1,0 +1,75 @@
+title: Common Ground
+description: A web3-native messaging and voice chat platform, built as a public good
+url: "https://dao.cg"  # Primary domain
+baseurl: ""
+
+# Domain Aliases (for SEO)
+domain_aliases:
+  - "https://common-ground-dao.github.io"
+
+# Build settings
+markdown: kramdown
+kramdown:
+  header_offset: 1  # This shifts all markdown headings down one level
+permalink: pretty
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+  stakeholders:
+    output: true
+    permalink: /stakeholders/:name/
+  wiki:
+    output: true
+    permalink: /wiki/:path/
+
+# Default layouts - unified defaults array
+defaults:
+  - scope:
+      path: ""
+      type: "stakeholders"
+    values:
+      layout: stakeholder
+  - scope:
+      path: ""
+      collection: "wiki"
+    values:
+      layout: wiki
+  - scope:
+      path: "assets/js"
+    values:
+      layout: null
+      content_type: application/javascript
+
+# Social links
+twitter_username: CommonGround_cg
+email: ola@dao.cg
+github_username: Common-Ground-DAO
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git/
+  - README.md
+  - _config.development.yml
+  - CNAME
+  - .cursorrules
+  - "*.log"
+
+# Environment-specific settings
+production: true
+compress_html: true  # Enable HTML compression in production
+sass:
+  style: compressed  # Compress CSS in production
+
+# Add .js files to the list of files Jekyll will copy
+include:
+  - assets/js/*.js 

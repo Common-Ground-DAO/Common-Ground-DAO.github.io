@@ -1,0 +1,99 @@
+{% assign metadata = site.data.wiki_metadata %}
+{% assign relationships = site.data.wiki_relationships %}
+
+<div class="wiki-related">
+  <h2>Related Content</h2>
+  
+  <!-- Direct Relationships -->
+  {% assign direct_relations = relationships.edges | where: "source", page.slug %}
+  {% if direct_relations.size > 0 %}
+  <div class="related-section">
+    <h3>Related Pages</h3>
+    <div class="related-grid">
+      {% for relation in direct_relations %}
+      {% assign target_page = site.wiki | where: "slug", relation.target | first %}
+      {% if target_page %}
+      <div class="related-item">
+        <div class="related-type">
+          {% assign relation_type = metadata.relationship_types[relation.type] %}
+          <span class="relation-badge" style="background-color: {{ relation_type.color }}">
+            {{ relation_type.name }}
+          </span>
+        </div>
+        <a href="{{ target_page.url }}" class="related-link">
+          <h4>{{ target_page.title }}</h4>
+          {% if target_page.summary %}
+          <p>{{ target_page.summary | truncate: 120 }}</p>
+          {% endif %}
+        </a>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+  
+  <!-- Same Category -->
+  {% assign category_pages = site.wiki | where: "category", page.category %}
+  {% if category_pages.size > 1 %}
+  <div class="related-section">
+    <h3>More in {{ metadata.categories[page.category].name }}</h3>
+    <div class="related-grid">
+      {% for cat_page in category_pages %}
+      {% if cat_page.url != page.url %}
+      <div class="related-item">
+        <a href="{{ cat_page.url }}" class="related-link">
+          <h4>{{ cat_page.title }}</h4>
+          {% if cat_page.summary %}
+          <p>{{ cat_page.summary | truncate: 120 }}</p>
+          {% endif %}
+        </a>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+  
+  <!-- Learning Paths -->
+  {% if page.learning_paths %}
+  <div class="related-section">
+    <h3>Learning Paths</h3>
+    {% for path in page.learning_paths %}
+    {% assign path_data = metadata.learning_paths[path] %}
+    <div class="learning-path">
+      <h4>{{ path_data.name }}</h4>
+      <p>{{ path_data.description }}</p>
+      <div class="path-sequence">
+        {% assign current_index = path_data.sequence | find_index: page.slug %}
+        {% for step in path_data.sequence %}
+        {% assign step_page = site.wiki | where: "slug", step | first %}
+        {% if step_page %}
+        <a href="{{ step_page.url }}" 
+           class="path-step {% if forloop.index0 == current_index %}current{% endif %}"
+           style="background-color: {% if forloop.index0 <= current_index %}{{ path_data.color }}{% else %}#eee{% endif %}">
+          {{ forloop.index }}
+        </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  
+  <!-- Popular Tags -->
+  {% if page.tags %}
+  <div class="related-section">
+    <h3>Related Tags</h3>
+    <div class="tag-cloud">
+      {% for tag in page.tags %}
+      {% assign tag_data = metadata.tags[tag] %}
+      <a href="/wiki/tags/{{ tag }}" class="tag" style="background-color: {{ tag_data.color }}">
+        {{ tag_data.name }}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</div> 

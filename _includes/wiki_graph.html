@@ -1,0 +1,161 @@
+<div class="wiki-graph">
+  <div class="wiki-graph-controls">
+    <select id="graph-view-mode" class="graph-select">
+      <option value="force">Network View</option>
+      <option value="tree">Hierarchy View</option>
+      <option value="cluster">Cluster View</option>
+    </select>
+    
+    <div class="graph-legend">
+      <div class="legend-item">
+        <span class="legend-color" style="background-color: var(--primary-color)"></span>
+        <span class="legend-label">Current Page</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-color" style="background-color: var(--text-color-light)"></span>
+        <span class="legend-label">Related Pages</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-color" style="background-color: var(--border-color)"></span>
+        <span class="legend-label">Connections</span>
+      </div>
+    </div>
+  </div>
+  
+  <div id="wiki-graph" class="wiki-graph"></div>
+</div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+// Graph data preparation
+const graphData = {
+  nodes: [],
+  links: []
+};
+
+{% for page in site.wiki %}
+graphData.nodes.push({
+  id: "{{ page.slug }}",
+  title: "{{ page.title }}",
+  url: "{{ page.url }}",
+  category: "{{ page.category }}",
+  isCurrent: "{{ page.url }}" === "{{ page.url }}"
+});
+
+{% if page.related_terms %}
+{% for related in page.related_terms %}
+graphData.links.push({
+  source: "{{ page.slug }}",
+  target: "{{ related }}",
+  type: "related"
+});
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+// Initialize force-directed graph
+function initForceGraph() {
+  const width = document.getElementById('wiki-graph').clientWidth;
+  const height = document.getElementById('wiki-graph').clientHeight;
+  
+  const simulation = d3.forceSimulation(graphData.nodes)
+    .force("link", d3.forceLink(graphData.links).id(d => d.id))
+    .force("charge", d3.forceManyBody().strength(-100))
+    .force("center", d3.forceCenter(width / 2, height / 2));
+    
+  const svg = d3.select("#wiki-graph")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
+    
+  const link = svg.append("g")
+    .selectAll("line")
+    .data(graphData.links)
+    .join("line")
+    .attr("stroke", "var(--border-color)")
+    .attr("stroke-width", 1);
+    
+  const node = svg.append("g")
+    .selectAll("circle")
+    .data(graphData.nodes)
+    .join("circle")
+    .attr("r", 5)
+    .attr("fill", d => d.isCurrent ? "var(--primary-color)" : "var(--text-color-light)")
+    .call(drag(simulation));
+    
+  node.append("title")
+    .text(d => d.title);
+    
+  simulation.on("tick", () => {
+    link
+      .attr("x1", d => d.source.x)
+      .attr("y1", d => d.source.y)
+      .attr("x2", d => d.target.x)
+      .attr("y2", d => d.target.y);
+      
+    node
+      .attr("cx", d => d.x)
+      .attr("cy", d => d.y);
+  });
+}
+
+// Initialize hierarchical tree
+function initTreeGraph() {
+  // Implementation for hierarchical tree view
+}
+
+// Initialize cluster view
+function initClusterGraph() {
+  // Implementation for cluster view
+}
+
+// Drag behavior
+function drag(simulation) {
+  function dragstarted(event) {
+    if (!event.active) simulation.alphaTarget(0.3).restart();
+    event.subject.fx = event.subject.x;
+    event.subject.fy = event.subject.y;
+  }
+  
+  function dragged(event) {
+    event.subject.fx = event.x;
+    event.subject.fy = event.y;
+  }
+  
+  function dragended(event) {
+    if (!event.active) simulation.alphaTarget(0);
+    event.subject.fx = null;
+    event.subject.fy = null;
+  }
+  
+  return d3.drag()
+    .on("start", dragstarted)
+    .on("drag", dragged)
+    .on("end", dragended);
+}
+
+// Initialize graph based on selected view mode
+function initGraph() {
+  const mode = document.getElementById('graph-view-mode').value;
+  d3.select("#wiki-graph").selectAll("*").remove();
+  
+  switch(mode) {
+    case 'force':
+      initForceGraph();
+      break;
+    case 'tree':
+      initTreeGraph();
+      break;
+    case 'cluster':
+      initClusterGraph();
+      break;
+  }
+}
+
+// Event listeners
+document.getElementById('graph-view-mode').addEventListener('change', initGraph);
+window.addEventListener('resize', initGraph);
+
+// Initial render
+initGraph();
+</script> 

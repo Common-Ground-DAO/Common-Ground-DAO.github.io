@@ -1,0 +1,245 @@
+{
+  "categories": {
+    "glossary": {
+      "name": "Glossary",
+      "description": "Core terms and concepts in the Common Ground ecosystem",
+      "entries": ["hyperobject", "coinship", "memecoin", "game_of_chains"]
+    },
+    "mechanics": {
+      "name": "Mechanics",
+      "description": "Key mechanisms and processes that drive the ecosystem",
+      "entries": ["degen_value_capture", "regen_value_redistribution"]
+    },
+    "primitives": {
+      "name": "Primitives",
+      "description": "Fundamental building blocks of the Common Ground system",
+      "entries": ["community_token", "hypercerts", "discourse_graphs", "ai_hiveminds", "subjectivocracy"]
+    },
+    "patterns": {
+      "name": "Design Patterns",
+      "description": "Recurring solutions and architectural patterns",
+      "entries": ["token_distribution", "value_capture", "coordination_mechanisms"]
+    },
+    "infrastructure": {
+      "name": "Infrastructure",
+      "description": "Technical components and system architecture",
+      "entries": ["smart_contracts", "token_standards", "governance_systems"]
+    },
+    "governance": {
+      "name": "Governance",
+      "description": "Decision-making and coordination frameworks",
+      "entries": ["voting_mechanisms", "proposal_systems", "treasury_management"]
+    }
+  },
+  "clusters": {
+    "theory": {
+      "name": "Theoretical Concepts",
+      "description": "Foundational ideas and frameworks",
+      "color": "#4A90E2"
+    },
+    "mechanics": {
+      "name": "System Mechanics",
+      "description": "Operational mechanisms and processes",
+      "color": "#50E3C2"
+    },
+    "primitives": {
+      "name": "System Primitives",
+      "description": "Core building blocks and components",
+      "color": "#F5A623"
+    },
+    "implementation": {
+      "name": "Implementation",
+      "description": "Technical implementation details",
+      "color": "#D0021B"
+    },
+    "community": {
+      "name": "Community",
+      "description": "Social and community aspects",
+      "color": "#7ED321"
+    },
+    "economics": {
+      "name": "Economics",
+      "description": "Economic models and incentives",
+      "color": "#9013FE"
+    }
+  },
+  "difficulty_levels": {
+    "beginner": {
+      "name": "Beginner",
+      "description": "Fundamental concepts accessible to newcomers",
+      "color": "#7ED321"
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "description": "Concepts requiring some background knowledge",
+      "color": "#F5A623"
+    },
+    "advanced": {
+      "name": "Advanced",
+      "description": "Complex concepts requiring deep understanding",
+      "color": "#D0021B"
+    }
+    },
+  "relationship_types": {
+    "implements": {
+      "name": "Implements",
+      "description": "A implements or realizes B",
+      "inverse": "implemented_by",
+      "color": "#4A90E2"
+    },
+    "enables": {
+      "name": "Enables",
+      "description": "A enables or facilitates B",
+      "inverse": "enabled_by",
+      "color": "#7ED321"
+    },
+    "type_of": {
+      "name": "Type Of",
+      "description": "A is a type or kind of B",
+      "inverse": "has_type",
+      "color": "#9013FE"
+    },
+    "utilizes": {
+      "name": "Utilizes",
+      "description": "A uses or leverages B",
+      "inverse": "utilized_by",
+      "color": "#F5A623"
+    },
+    "mechanism": {
+      "name": "Mechanism",
+      "description": "A is a mechanism of B",
+      "inverse": "has_mechanism",
+      "color": "#50E3C2"
+    },
+    "component": {
+      "name": "Component",
+      "description": "A is a component of B",
+      "inverse": "has_component",
+      "color": "#D0021B"
+    },
+    "participates_in": {
+      "name": "Participates In",
+      "description": "A participates in or is part of B",
+      "inverse": "has_participant",
+      "color": "#B8E986"
+    },
+    "counterpart": {
+      "name": "Counterpart",
+      "description": "A is a complementary concept to B",
+      "inverse": "counterpart",
+      "color": "#9B9B9B"
+    },
+    "operates_within": {
+      "name": "Operates Within",
+      "description": "A operates or functions within B",
+      "inverse": "contains",
+      "color": "#4A4A4A"
+    },
+    "extends": {
+      "name": "Extends",
+      "description": "A extends or builds upon B",
+      "inverse": "extended_by",
+      "color": "#C7B299"
+    },
+    "influences": {
+      "name": "Influences",
+      "description": "A influences or affects B",
+      "inverse": "influenced_by",
+      "color": "#BD10E0"
+    },
+    "governs": {
+      "name": "Governs",
+      "description": "A governs or controls B",
+      "inverse": "governed_by",
+      "color": "#9B51E0"
+    },
+    "interacts_with": {
+      "name": "Interacts With",
+      "description": "A interacts with B",
+      "inverse": "interacts_with",
+      "color": "#50E3C2"
+    },
+    "depends_on": {
+      "name": "Depends On",
+      "description": "A depends on B",
+      "inverse": "required_by",
+      "color": "#F5A623"
+    }
+  },
+  "learning_paths": {
+    "token_mechanics": {
+      "name": "Token Mechanics",
+      "description": "Understanding token-based coordination",
+      "sequence": ["community_token", "coinship", "memecoin", "game_of_chains"]
+    },
+    "value_systems": {
+      "name": "Value Systems",
+      "description": "Understanding value capture and redistribution",
+      "sequence": ["degen_value_capture", "regen_value_redistribution", "hypercerts"]
+    },
+    "governance_path": {
+      "name": "Governance Systems",
+      "description": "Understanding community governance and decision making",
+      "sequence": ["community_token", "voting_mechanisms", "proposal_systems", "treasury_management"]
+    },
+    "technical_path": {
+      "name": "Technical Implementation",
+      "description": "Understanding the technical architecture",
+      "sequence": ["smart_contracts", "token_standards", "governance_systems"]
+    },
+    "community_path": {
+      "name": "Community Building",
+      "description": "Understanding community development and engagement",
+      "sequence": ["coinship", "memecoin", "coordination_mechanisms"]
+    }
+  },
+  "tags": {
+    "technical": {
+      "name": "Technical",
+      "description": "Technical implementation details",
+      "color": "#4A90E2"
+    },
+    "social": {
+      "name": "Social",
+      "description": "Social and community aspects",
+      "color": "#7ED321"
+    },
+    "economic": {
+      "name": "Economic",
+      "description": "Economic models and incentives",
+      "color": "#F5A623"
+    },
+    "governance": {
+      "name": "Governance",
+      "description": "Governance and decision making",
+      "color": "#9013FE"
+    },
+    "infrastructure": {
+      "name": "Infrastructure",
+      "description": "System infrastructure and architecture",
+      "color": "#D0021B"
+    }
+  },
+  "status": {
+    "draft": {
+      "name": "Draft",
+      "description": "Initial draft of the concept",
+      "color": "#9B9B9B"
+    },
+    "review": {
+      "name": "Under Review",
+      "description": "Being reviewed by the community",
+      "color": "#F5A623"
+    },
+    "stable": {
+      "name": "Stable",
+      "description": "Well-established concept",
+      "color": "#7ED321"
+    },
+    "evolving": {
+      "name": "Evolving",
+      "description": "Concept is actively evolving",
+      "color": "#4A90E2"
+    }
+  }
+} 

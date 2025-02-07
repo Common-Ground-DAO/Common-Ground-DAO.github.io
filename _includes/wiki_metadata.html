@@ -1,0 +1,113 @@
+{% assign metadata = site.data.wiki_metadata %}
+
+<div class="wiki-metadata-grid">
+  <!-- Category -->
+  <div class="metadata-item">
+    <div class="metadata-label">Category</div>
+    <div class="metadata-value">
+      {% assign category = metadata.categories[page.category] %}
+      <span class="tag" style="background-color: {{ metadata.clusters[page.cluster].color }}">
+        {{ category.name }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Difficulty -->
+  <div class="metadata-item">
+    <div class="metadata-label">Difficulty</div>
+    <div class="metadata-value">
+      {% assign difficulty = metadata.difficulty_levels[page.difficulty] %}
+      <span class="tag" style="background-color: {{ difficulty.color }}">
+        {{ difficulty.name }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Status -->
+  {% if page.status %}
+  <div class="metadata-item">
+    <div class="metadata-label">Status</div>
+    <div class="metadata-value">
+      {% assign status = metadata.status[page.status] %}
+      <span class="tag" style="background-color: {{ status.color }}">
+        {{ status.name }}
+      </span>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Tags -->
+  {% if page.tags %}
+  <div class="metadata-item">
+    <div class="metadata-label">Tags</div>
+    <div class="metadata-value">
+      {% for tag in page.tags %}
+      {% assign tag_data = metadata.tags[tag] %}
+      <span class="tag" style="background-color: {{ tag_data.color }}">
+        {{ tag_data.name }}
+      </span>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Prerequisites -->
+  {% if page.prerequisites and page.prerequisites.size > 0 %}
+  <div class="metadata-item">
+    <div class="metadata-label">Prerequisites</div>
+    <div class="metadata-value">
+      {% for prereq in page.prerequisites %}
+      {% assign prereq_page = site.wiki | where: "slug", prereq | first %}
+      {% if prereq_page %}
+      <a href="{{ prereq_page.url }}" class="wiki-link">{{ prereq_page.title }}</a>
+      {% unless forloop.last %} • {% endunless %}
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Recommended Next -->
+  {% if page.recommended_next and page.recommended_next.size > 0 %}
+  <div class="metadata-item">
+    <div class="metadata-label">Next Steps</div>
+    <div class="metadata-value">
+      {% for next in page.recommended_next %}
+      {% assign next_page = site.wiki | where: "slug", next | first %}
+      {% if next_page %}
+      <a href="{{ next_page.url }}" class="wiki-link">{{ next_page.title }}</a>
+      {% unless forloop.last %} • {% endunless %}
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Sources -->
+  {% if page.sources %}
+  <div class="metadata-item">
+    <div class="metadata-label">Sources</div>
+    <div class="metadata-value">
+      {% for source in page.sources %}
+      <div class="source-item">
+        <span class="source-document">{{ source.document }}</span>
+        {% if source.section %}
+        <span class="source-section">{{ source.section }}</span>
+        {% endif %}
+        {% if source.quote %}
+        <blockquote class="source-quote">{{ source.quote }}</blockquote>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Last Updated -->
+  <div class="metadata-item">
+    <div class="metadata-label">Last Updated</div>
+    <div class="metadata-value">
+      {{ page.last_updated | date: "%B %d, %Y" }}
+    </div>
+  </div>
+</div> 
