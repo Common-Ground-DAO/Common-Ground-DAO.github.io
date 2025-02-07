@@ -3,6 +3,18 @@ description: A web3-native messaging and voice chat platform, built as a public 
 url: "https://dao.cg"  # Primary domain
 baseurl: ""
 
+# Social and SEO settings
+tagline: Building the coordination layer for web3 communities
+logo: /assets/images/social-card.png  # Path to your default social image
+social:
+  name: Common Ground
+  links:
+    - https://twitter.com/CommonGround_cg
+    - https://github.com/Common-Ground-DAO
+twitter:
+  username: CommonGround_cg
+  card: summary_large_image
+
 # Domain Aliases (for SEO)
 domain_aliases:
   - "https://common-ground-dao.github.io"
@@ -47,9 +59,12 @@ defaults:
     values:
       layout: null
       content_type: application/javascript
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/social-card.png  # Default social image for all pages
 
 # Social links
-twitter_username: CommonGround_cg
 email: ola@dao.cg
 github_username: Common-Ground-DAO
 

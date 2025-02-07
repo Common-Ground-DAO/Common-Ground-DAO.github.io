@@ -12,6 +12,17 @@
     <script src="{{ '/assets/js/vendor.bundle.js' | relative_url }}"></script>
     {% feed_meta %}
     {% seo %}
+    <meta name="twitter:site" content="@{{ site.twitter.username }}">
+    <meta name="twitter:creator" content="@{{ site.twitter.username }}">
+    {% if page.image %}
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    {% endif %}
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="{{ site.title }}">
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+    {% endif %}
 </head>
 <body>
     <header>
