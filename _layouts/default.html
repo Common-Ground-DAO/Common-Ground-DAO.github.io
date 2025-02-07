@@ -31,6 +31,7 @@
                 <a href="{{ '/' | relative_url }}" class="logo">
                     <img src="{{ '/assets/images/logo-black-transparent.png' | relative_url }}" alt="{{ site.title }}">
                 </a>
+                <button class="burger-menu" aria-label="Toggle navigation menu">☰</button>
                 <div class="nav-links">
                     <a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about/' %}class="active"{% endif %}>About</a>
                     <a href="{{ '/governance/' | relative_url }}" {% if page.url contains '/governance/' %}class="active"{% endif %}>Governance</a>
@@ -113,5 +114,6 @@
             </div>
         </div>
     </footer>
+    <script src="{{ '/assets/js/mobile-nav.js' | relative_url }}"></script>
 </body>
 </html>

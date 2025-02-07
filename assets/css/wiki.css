@@ -393,9 +393,9 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1400px) {
+@media (max-width: 1200px) {
   .wiki-container {
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 220px minmax(0, 1fr);
   }
   
   .wiki-graph-sidebar {
@@ -403,14 +403,28 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .wiki-container {
     grid-template-columns: 1fr;
     padding: 1rem;
+    gap: 1rem;
   }
   
   .wiki-sidebar {
-    display: none;
+    position: fixed;
+    left: -100%;
+    top: var(--header-height);
+    bottom: 0;
+    width: 100%;
+    max-width: 300px;
+    background: var(--background-color);
+    border-right: 1px solid var(--border-color);
+    transition: left 0.3s ease;
+    z-index: 100;
+  }
+  
+  .wiki-sidebar.open {
+    left: 0;
   }
   
   .wiki-content {
@@ -418,12 +432,60 @@
   }
   
   .wiki-title {
-    font-size: 2rem;
+    font-size: var(--font-size-xl);
+    margin-bottom: 0.75rem;
+  }
+  
+  .wiki-summary {
+    font-size: var(--font-size-base);
+    margin-bottom: 1.5rem;
   }
   
   .entry-grid,
   .path-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .entry-card,
+  .path-card {
+    padding: 1.25rem;
+  }
+  
+  .wiki-nav-search input {
+    font-size: 16px;
+    height: 44px;
+  }
+  
+  .wiki-nav-link {
+    padding: 0.75rem;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wiki-container {
+    padding: 0.5rem;
+  }
+  
+  .wiki-header {
+    margin-bottom: 2rem;
+  }
+  
+  .entry-card,
+  .path-card {
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  .path-steps {
+    gap: 0.5rem;
+  }
+  
+  .path-step {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.8rem;
   }
 }
 
