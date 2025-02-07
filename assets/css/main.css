@@ -574,25 +574,31 @@ footer .footer-links a:hover {
 /* Responsive design */
 @media (max-width: 768px) {
   header nav {
-    height: auto;
-    padding: 1rem 0;
     flex-direction: column;
-    gap: 1rem;
+    height: auto;
   }
-
   header .nav-links {
     flex-direction: column;
+    align-items: center;
+    gap: 10px;
     width: 100%;
-    text-align: center;
   }
-  
   header .nav-links a {
-    padding: 0.75rem 0;
+    font-size: var(--font-size-base);
+    padding: 8px;
   }
-  
-  footer .footer-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  header .join-button {
+    margin-top: 10px;
+  }
+}
+
+/* Extra Small Screen Adjustments for Header */
+@media (max-width: 480px) {
+  header nav {
+    padding: 0 10px;
+  }
+  header .logo img {
+    max-width: 150px;
   }
 }
 
@@ -1199,4 +1205,30 @@ footer .footer-links a:hover {
   margin: 0;
   line-height: 1.4;
   max-width: 800px;
+}
+
+/* Container Mobile Adjustments */
+@media (max-width: 768px) {
+    .container {
+         padding: 0 15px;
+    }
+}
+@media (max-width: 480px) {
+    .container {
+         padding: 0 10px;
+    }
+}
+
+/* Mobile Footer Adjustments */
+@media (max-width: 768px) {
+    footer .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+    footer .social-links {
+        justify-content: center;
+    }
 }
