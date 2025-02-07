@@ -7,12 +7,12 @@ layout: default
 
     <main class="wiki-content">
         {% if page.is_category_index %}
-            {% assign category_pages = site.wiki | where_exp: "item", "item.category == page.category and item.title != 'Index'" | sort: "weight" %}
+            {% assign category_pages = site.wiki | where_exp:"item","item.category == page.category" | where_exp:"item","item.title != 'Index'" | sort: "weight" %}
             <h1>{{ page.category | capitalize }}</h1>
             {% include wiki_article_list.html pages=category_pages %}
             
         {% elsif page.is_tag_index %}
-            {% assign tagged_pages = site.wiki | where_exp: "item", "item.tags contains page.tag and item.title != 'Index'" | sort: "weight" %}
+            {% assign tagged_pages = site.wiki | where_exp:"item","item.tags contains page.tag" | where_exp:"item","item.title != 'Index'" | sort: "weight" %}
             <h1>{{ page.tag | capitalize }}</h1>
             {% include wiki_article_list.html pages=tagged_pages %}
             

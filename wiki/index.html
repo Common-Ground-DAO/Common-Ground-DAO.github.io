@@ -16,7 +16,7 @@ title: Wiki
             <section class="wiki-section">
                 <h2>Core Concepts</h2>
                 <div class="wiki-grid">
-                    {% assign concept_pages = site.wiki | where_exp: "item", "item.category == 'concepts' and item.title != 'Index'" | sort: "weight" %}
+                    {% assign concept_pages = site.wiki | where_exp:"item","item.category == 'concepts'" | where_exp:"item","item.title != 'Index'" | sort: "weight" %}
                     {% for page in concept_pages limit: 6 %}
                     <a href="{{ page.url }}" class="wiki-card">
                         <h3>{{ page.title }}</h3>
@@ -29,7 +29,7 @@ title: Wiki
             <section class="wiki-section">
                 <h2>Technical Primitives</h2>
                 <div class="wiki-grid">
-                    {% assign primitive_pages = site.wiki | where_exp: "item", "item.category == 'primitives' and item.title != 'Index'" | sort: "weight" %}
+                    {% assign primitive_pages = site.wiki | where_exp:"item","item.category == 'primitives'" | where_exp:"item","item.title != 'Index'" | sort: "weight" %}
                     {% for page in primitive_pages limit: 6 %}
                     <a href="{{ page.url }}" class="wiki-card">
                         <h3>{{ page.title }}</h3>
@@ -42,7 +42,7 @@ title: Wiki
             <section class="wiki-section">
                 <h2>System Mechanics</h2>
                 <div class="wiki-grid">
-                    {% assign mechanic_pages = site.wiki | where_exp: "item", "item.category == 'mechanics' and item.title != 'Index'" | sort: "weight" %}
+                    {% assign mechanic_pages = site.wiki | where_exp:"item","item.category == 'mechanics'" | where_exp:"item","item.title != 'Index'" | sort: "weight" %}
                     {% for page in mechanic_pages limit: 6 %}
                     <a href="{{ page.url }}" class="wiki-card">
                         <h3>{{ page.title }}</h3>
@@ -55,7 +55,7 @@ title: Wiki
             <section class="wiki-section">
                 <h2>Glossary</h2>
                 <div class="wiki-grid">
-                    {% assign glossary_pages = site.wiki | where_exp: "item", "item.category == 'glossary' and item.title != 'Index'" | sort: "title" %}
+                    {% assign glossary_pages = site.wiki | where_exp:"item","item.category == 'glossary'" | where_exp:"item","item.title != 'Index'" | sort: "title" %}
                     {% for page in glossary_pages limit: 6 %}
                     <a href="{{ page.url }}" class="wiki-card">
                         <h3>{{ page.title }}</h3>

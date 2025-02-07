@@ -12,6 +12,8 @@ markdown: kramdown
 kramdown:
   header_offset: 1  # This shifts all markdown headings down one level
 permalink: pretty
+theme: null  # Explicitly disable theme
+remote_theme: null  # Explicitly disable remote theme
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -63,6 +65,8 @@ exclude:
   - CNAME
   - .cursorrules
   - "*.log"
+  - import/  # Exclude the import directory
+  - import/**/*  # Exclude all contents of the import directory
 
 # Environment-specific settings
 production: true
