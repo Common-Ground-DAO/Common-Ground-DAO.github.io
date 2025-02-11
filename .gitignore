@@ -6,6 +6,7 @@ _site
 vendor
 import
 node_modules
+.repomix-output.txt
 
 # Ruby dependencies
 .bundle

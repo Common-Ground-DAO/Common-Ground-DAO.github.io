@@ -1,10 +1,154 @@
 ---
 layout: default
-title: {{ page.title }}
 ---
 
-<div class="content-container">
-    <div class="content">
+<div class="page-container">
+    <main class="page-content">
+        <header class="page-header">
+            <h1 class="page-title">{{ page.title }}</h1>
+            {% if page.summary %}
+            <p class="page-summary">{{ page.summary }}</p>
+            {% endif %}
+        </header>
+        
         {{ content }}
-    </div>
-</div> 
+    </main>
+</div>
+
+<style>
+.page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.page-content {
+    background: var(--background-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+.page-header {
+    margin-bottom: 2rem;
+}
+
+.page-title {
+    font-size: var(--font-size-2xl);
+    color: var(--text-color);
+    margin: 0 0 1rem 0;
+}
+
+.page-summary {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Typography styles moved from .content */
+.page-content h1 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.page-content h2 {
+    font-size: var(--font-size-xl);
+    margin: 2rem 0 1rem;
+    line-height: 1.3;
+}
+
+.page-content h3 {
+    font-size: var(--font-size-lg);
+    margin: 1.5rem 0 0.75rem;
+    line-height: 1.4;
+}
+
+.page-content p {
+    margin-bottom: 1rem;
+    line-height: var(--line-height-base);
+}
+
+.page-content ul, 
+.page-content ol {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.page-content li {
+    margin-bottom: 0.5rem;
+}
+
+.page-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+    display: block;
+}
+
+.page-content pre {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 1rem;
+    background: var(--code-bg);
+    border-radius: 4px;
+}
+
+.page-content code {
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    font-size: 0.9em;
+    padding: 0.2em 0.4em;
+    background: var(--code-bg);
+    border-radius: 3px;
+}
+
+.page-content a {
+    color: var(--brand-color);
+    text-decoration: none;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+.page-content a:hover {
+    text-decoration: underline;
+}
+
+/* Table styles moved from .content */
+.page-content table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    box-sizing: border-box;
+}
+
+.page-content table th,
+.page-content table td {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    text-align: left;
+    word-break: break-word;
+}
+
+.page-content table th {
+    background: var(--light-gray);
+}
+
+@media (max-width: 768px) {
+    .page-container {
+        padding: 1rem;
+    }
+    
+    .page-content {
+        padding: 1.5rem;
+    }
+}
+</style> 

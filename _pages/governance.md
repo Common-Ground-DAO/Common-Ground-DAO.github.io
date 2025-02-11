@@ -5,11 +5,6 @@ summary: Join us in building the future of decentralized communication through p
 permalink: /governance/
 ---
 
-<header class="page-header">
-    <h1 class="page-title">Governance</h1>
-    <p class="page-summary">Shape the future of Common Ground through our progressive decentralization journey.</p>
-</header>
-
 <div class="governance-intro">
     <div class="container">
         <h2>Progressive Decentralization</h2>

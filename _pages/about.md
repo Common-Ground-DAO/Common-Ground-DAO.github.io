@@ -5,11 +5,6 @@ summary: Learn about our mission, values, and the platform we're building to rev
 permalink: /about/
 ---
 
-<header class="page-header">
-    <h1 class="page-title">About Common Ground</h1>
-    <p class="page-summary">Learn about our mission, values, and the platform we're building to revolutionize web3 communication.</p>
-</header>
-
 ## Our Vision
 
 Common Ground DAO is building the next generation of coordination tools across chats, calls, forums, and ecosystems. We believe the new web needs new ways of doing things, and we're here to make that happen. Our platform serves as the coordination layer for web3, enabling communities to connect, collaborate, and create in ways previously impossible.
