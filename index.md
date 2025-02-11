@@ -10,10 +10,6 @@ summary: Building the coordination layer for web3 communities through decentrali
 
 Common Ground is a web3-native messaging and voice chat platform that brings together the best of Discord, Telegram, and web3 into one seamless experience. [Learn more...](https://commonground.cg){:target="_blank"}
 
-<header class="page-header">
-    <h1 class="page-title">Meet the Common Ground DAO</h1>
-</header>
-
 <div class="hero full-screen">
     <div class="hero-content">
         <p class="hero-subtitle">Accelerating the web's transition to  user ownership.</p>
