@@ -1,0 +1,369 @@
+/* templates.css - Template-Specific Overrides */
+
+/* Core layout styles have been moved to layout.css */
+/* Add template-specific overrides here if necessary */
+
+/* Base styles */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Content Container */
+.content-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.content {
+  background: var(--background-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* Content Typography and Elements */
+.content h1 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  max-width: 100%;
+}
+
+.content h2 {
+  font-size: var(--font-size-xl);
+  margin: 2rem 0 1rem;
+  line-height: 1.3;
+  max-width: 100%;
+}
+
+.content h3 {
+  font-size: var(--font-size-lg);
+  margin: 1.5rem 0 0.75rem;
+  line-height: 1.4;
+  max-width: 100%;
+}
+
+.content p {
+  margin-bottom: 1rem;
+  line-height: var(--line-height-base);
+  max-width: 100%;
+}
+
+.content ul, .content ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.content li {
+  margin-bottom: 0.5rem;
+  max-width: 100%;
+}
+
+.content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+  display: block;
+}
+
+.content pre {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 1rem;
+  background: var(--code-bg);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.content code {
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  font-size: 0.9em;
+  padding: 0.2em 0.4em;
+  background: var(--code-bg);
+  border-radius: 3px;
+}
+
+.content a {
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+.content-header {
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+}
+
+.content-title {
+  font-size: var(--font-size-xl);
+  color: var(--text-color);
+  margin: 0;
+  max-width: 100%;
+}
+
+/* Post List Styling */
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Default to 3 columns on desktop */
+  gap: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.post-list .card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.post-list .card:hover {
+  transform: translateY(-4px);
+}
+
+.post-list .card h3 {
+  margin: 0.5rem 0;
+  font-size: var(--font-size-lg);
+  max-width: 100%;
+}
+
+.post-list .card p {
+  margin: 0.5rem 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.post-meta {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  max-width: 100%;
+}
+
+/* Tables */
+.content table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  box-sizing: border-box;
+}
+
+.content table th,
+.content table td {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  text-align: left;
+  word-break: break-word;
+}
+
+.content table th {
+  background: var(--light-gray);
+}
+
+/* Feature/Stats Cards Grid */
+.feature-grid,
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Default to 3 columns on desktop */
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.feature-card,
+.stats-card {
+  background: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.stats-card {
+  text-align: center;
+}
+
+.stats-number {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--brand-color);
+  margin-bottom: 0.5rem;
+}
+
+.stats-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .content-container {
+    margin: 0.75rem auto;
+    padding: 0 0.5rem;
+  }
+  
+  .content {
+    padding: 1rem;
+  }
+  
+  .content h1 {
+    font-size: var(--font-size-xl);
+    margin-bottom: 1rem;
+  }
+  
+  .content h2 {
+    font-size: var(--font-size-lg);
+    margin: 1.5rem 0 0.75rem;
+  }
+  
+  .content h3 {
+    font-size: var(--font-size-md);
+    margin: 1.25rem 0 0.5rem;
+  }
+  
+  .content p, .content li {
+    font-size: var(--font-size-base);
+  }
+  
+  .content ul, .content ol {
+    padding-left: 1.25rem;
+  }
+  
+  .content img {
+    margin: 1rem 0;
+  }
+  
+  /* Force ONE box per line on mobile */
+  .post-list,
+  .feature-grid,
+  .stats-grid {
+    display: block !important; /* Stack grids on mobile */
+  }
+
+  .post-list .card,
+  .feature-card,
+  .stats-card {
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+    display: block !important;
+  }
+
+  /* Remove any fancy positioning */
+  .post-list .card {
+    height: auto !important;
+    position: static !important;
+  }
+
+  .feature-card,
+  .stats-card {
+    position: static !important;
+  }
+
+  /* Handle table overflow on mobile */
+  .content table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 0;
+  }
+  
+  /* Convert table to cards on mobile */
+  .content table, 
+  .content table thead, 
+  .content table tbody, 
+  .content table tr, 
+  .content table th, 
+  .content table td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .content table tr {
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+  }
+  
+  .content table th {
+    display: none;
+  }
+  
+  .content table td {
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .content table td:last-child {
+    border-bottom: 0;
+  }
+  
+  /* Handle code blocks on mobile */
+  .content pre {
+    padding: 0.75rem;
+    font-size: var(--font-size-sm);
+    margin: 1rem -1rem;
+    border-radius: 0;
+    white-space: pre-wrap;
+  }
+  
+  .content pre code {
+    white-space: pre-wrap;
+  }
+  
+  .content code {
+    font-size: var(--font-size-sm);
+    word-break: break-word;
+    white-space: normal;
+  }
+  
+  /* Ensure all inline elements wrap */
+  .content * {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+  }
+  
+  /* Handle long URLs and text */
+  .content a,
+  .content code,
+  .content pre {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+  }
+}

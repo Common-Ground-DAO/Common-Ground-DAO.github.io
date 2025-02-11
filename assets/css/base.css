@@ -1,0 +1,28 @@
+/* base.css - Reset, CSS Variables, and Typography Defaults */
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CSS Variables for breakpoints and theming */
+:root {
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 992px;
+  --breakpoint-lg: 1200px;
+  
+  --primary-color: #333;
+  --secondary-color: #666;
+  --font-family-base: Arial, sans-serif;
+}
+
+/* Typography Defaults */
+body {
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--primary-color);
+} 

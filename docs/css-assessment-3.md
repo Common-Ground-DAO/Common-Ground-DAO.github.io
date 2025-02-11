@@ -1,0 +1,6 @@
+Packing repository using repomix...
+Querying Gemini AI using gemini-2.0-flash-thinking-exp-01-21...
+```tool_code
+cursor-tools repo "cat assets/css/layout.css"
+cursor-tools repo "cat assets/css/templates.css"
+```

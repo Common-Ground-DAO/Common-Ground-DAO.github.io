@@ -15,6 +15,7 @@
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "chart.js": "^4.4.1",
+    "d3": "^7.9.0",
     "fuse.js": "^7.0.0",
     "rollup": "^4.9.5"
   },

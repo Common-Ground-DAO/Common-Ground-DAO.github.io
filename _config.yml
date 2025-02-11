@@ -1,6 +1,6 @@
-title: Common Ground
-description: A web3-native messaging and voice chat platform, built as a public good
-url: "https://dao.cg"  # Primary domain
+title: "Common Ground DAO"
+description: "Connecting web3 communities through decentralized communication"
+url: "https://common-ground-dao.github.io"
 baseurl: ""
 
 # Social and SEO settings
@@ -29,6 +29,7 @@ remote_theme: null  # Explicitly disable remote theme
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-wiki
 
 # Collections
 collections:
@@ -91,4 +92,10 @@ sass:
 
 # Add .js files to the list of files Jekyll will copy
 include:
-  - assets/js/*.js 
+  - assets/js/*.js
+
+wiki:
+  index: true
+  index_layout: wiki
+  home: "Home"
+  baseurl: "/wiki" 

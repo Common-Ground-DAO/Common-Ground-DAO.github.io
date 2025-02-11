@@ -1,0 +1,134 @@
+/* layout.css - Layout Structures: Grid System, Containers, Header, Footer, etc. */
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header, .footer {
+  padding: 1em;
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px; /* gutter adjustment */
+}
+
+.col {
+  flex: 1;
+  padding: 0 15px;
+}
+
+/* Clearfix for floated elements */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Responsive adjustments using breakpoints from base.css */
+@media (max-width: var(--breakpoint-sm)) {
+  .header, .footer {
+    text-align: center;
+  }
+}
+
+/* --- Consolidated Core Layout Styles from templates.css --- */
+
+/* Header Styles */
+header nav {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+header .logo {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  height: 100%;
+  width: auto;
+}
+
+header .nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+header .nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+header .nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--brand-color);
+  transition: width 0.3s;
+}
+
+header .nav-links a:hover::after {
+  width: 100%;
+}
+
+header .nav-links a.active::after {
+  width: 100%;
+}
+
+/* Mobile Navigation */
+.burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  .burger-menu {
+    display: block;
+  }
+  header .nav-links {
+    flex-direction: column;
+    display: none;
+  }
+  header .nav-links.open {
+    display: flex;
+  }
+}
+
+/* Main Content Styles */
+main {
+  padding: 1rem;
+}
+
+.content-container {
+  margin: 1rem 0;
+}
+
+/* Footer Styles */
+footer {
+  background: var(--secondary-color);
+  color: #fff;
+  padding: 1rem;
+} 

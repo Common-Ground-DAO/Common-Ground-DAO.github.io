@@ -98,15 +98,11 @@ Common Ground is a web3-native messaging and voice chat platform that brings tog
                 <p>Common Ground connects web3 primitives into a coherent whole, allowing anyone to harness the superpowers of credibly neutral, sovereign, and resilient coordination infrastructure.</p>
             </div>
             <div class="vision-image">
-                <!-- Placeholder for an illustration or diagram -->
-                <div class="network-visualization"></div>
+                <div id="network-visualization" class="network-visualization"></div>
             </div>
         </div>
     </div>
 </div>
-
-<script src="https://d3js.org/d3.v7.min.js"></script>
-<script src="{{ '/assets/js/network-viz.js' | relative_url }}"></script>
 
 ---
 

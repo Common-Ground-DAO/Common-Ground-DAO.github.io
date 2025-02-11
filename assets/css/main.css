@@ -1,3 +1,10 @@
+/* main.css - Modular CSS Imports */
+@import "base.css";
+@import "layout.css";
+@import "components.css";
+@import "utilities.css";
+@import "templates.css";
+
 /* Variables */
 :root {
   --brand-color: rgb(123, 181, 223);
@@ -8,6 +15,11 @@
   --border-color: #E1E8ED;
   --code-bg: #f6f8fa;
   
+  /* Bauhaus Colors */
+  --bauhaus-red: #E53935;
+  --bauhaus-yellow: #FFD700;
+  --bauhaus-blue: #1E88E5;
+  
   /* Typography Scale - Updated with fluid typography */
   --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.85rem);
   --font-size-sm: clamp(0.85rem, 0.8rem + 0.25vw, 0.95rem);
@@ -16,6 +28,7 @@
   --font-size-lg: clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem);
   --font-size-xl: clamp(1.5rem, 1.4rem + 0.5vw, 2rem);
   --font-size-2xl: clamp(2rem, 1.8rem + 1vw, 2.5rem);
+  --font-size-3xl: clamp(3rem, 2.5rem + 2vw, 4rem);
   
   /* Font Weights */
   --font-weight-normal: 400;
@@ -53,15 +66,152 @@ body {
   padding: 0 1rem;
 }
 
-/* Mobile Navigation */
-.burger-menu {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  color: var(--text-color);
+/* Mobile Navigation - Bauhaus Style */
+@media (max-width: 768px) {
+  header nav {
+    position: relative;
+    z-index: 1002;
+    background: var(--background-color);
+  }
+
+  .burger-menu {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 1rem;
+    color: var(--text-color);
+    position: relative;
+    z-index: 1001;
+    transition: transform 0.3s ease;
+    margin-left: auto;
+  }
+
+  .burger-menu.open {
+    transform: rotate(45deg);
+    color: var(--text-color);
+  }
+
+  header .logo {
+    position: relative;
+    z-index: 1002;
+  }
+
+  header .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background-color);
+    padding: 6rem 2rem 2rem;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-1rem);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  header .nav-links::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      linear-gradient(45deg, var(--bauhaus-red) 0%, transparent 40%),
+      linear-gradient(-45deg, var(--bauhaus-blue) 0%, transparent 40%);
+    opacity: 0.1;
+    z-index: -1;
+  }
+
+  header .nav-links.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  header .nav-links a {
+    color: var(--text-color);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin: 0.5rem 0;
+  }
+
+  header .nav-links a::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    background: var(--bauhaus-yellow);
+    transform: translateY(-50%) scale(0);
+    transition: transform 0.3s ease;
+  }
+
+  header .nav-links a:hover::before {
+    transform: translateY(-50%) scale(1);
+  }
+
+  header .nav-links a:hover {
+    transform: translateX(20px);
+    color: var(--bauhaus-yellow);
+  }
+
+  header .nav-links .join-button {
+    background: var(--bauhaus-yellow);
+    color: var(--text-color);
+    padding: 1rem 2rem;
+    border-radius: 0;
+    margin-top: 2rem;
+    font-size: var(--font-size-lg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  header .nav-links .join-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--bauhaus-red), var(--bauhaus-blue));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+
+  header .nav-links .join-button:hover {
+    color: white;
+    transform: translateX(0);
+  }
+
+  header .nav-links .join-button:hover::after {
+    opacity: 1;
+  }
+
+  header .nav-links .join-button .arrow {
+    display: inline-block;
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  header .nav-links .join-button:hover .arrow {
+    transform: translateX(5px) rotate(-45deg);
+  }
 }
 
 /* Header - Updated for mobile */
@@ -167,6 +317,8 @@ main {
   margin: 0 auto;
   box-shadow: 0 4px 12px rgba(44, 53, 61, 0.1);
   background: linear-gradient(135deg, var(--background-color) 0%, var(--light-gray) 100%);
+  width: calc(100% - 2rem);
+  box-sizing: border-box;
 }
 
 .content-header {
@@ -588,73 +740,7 @@ footer .footer-links a:hover {
   .content-container {
     padding: 1.5rem;
     margin: 0 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .burger-menu {
-    display: block;
-    order: 1;
-  }
-  
-  header .logo {
-    order: 0;
-  }
-  
-  header .nav-links {
-    display: none;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    background: var(--background-color);
-    flex-direction: column;
-    padding: 1rem;
-    border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-  
-  header .nav-links.open {
-    display: flex;
-  }
-  
-  header .nav-links a {
-    padding: 1rem;
-    width: 100%;
-    text-align: center;
-    font-size: var(--font-size-base);
-  }
-  
-  header .nav-links .join-button {
-    margin: 0.5rem 1rem;
-  }
-  
-  /* Improve touch targets */
-  button,
-  .nav-links a,
-  .social-link {
-    min-height: 44px;
-    padding: 0.75rem 1rem;
-  }
-  
-  /* Typography adjustments */
-  .content-title {
-    font-size: var(--font-size-xl);
-  }
-  
-  /* Form elements */
-  input,
-  select,
-  textarea {
-    font-size: 16px;
-    min-height: 44px;
-  }
-  
-  /* Performance optimizations */
-  .content-container {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 500px;
+    width: calc(100% - 2rem);
   }
 }
 
@@ -673,6 +759,8 @@ footer .footer-links a:hover {
   
   .content-container {
     padding: 1rem;
+    margin: 0 0.5rem;
+    width: calc(100% - 1rem);
     border-radius: 0.5rem;
   }
   
@@ -882,11 +970,12 @@ footer .footer-links a:hover {
 }
 
 .vision-card {
-    background: var(--light-gray);
+    background: var(--background-color);
     border-radius: 16px;
     padding: 2rem;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
 .vision-card:hover {
@@ -917,7 +1006,7 @@ footer .footer-links a:hover {
     grid-template-columns: 1fr;
     gap: 3rem;
     margin-top: 6rem;
-    background: var(--light-gray);
+    background: var(--background-color);
     border-radius: 24px;
     padding: 4rem;
     max-width: 1000px;
@@ -1279,4 +1368,43 @@ footer .footer-links a:hover {
     footer .social-links {
         justify-content: center;
     }
+}
+
+/* Custom Mobile Override: Force one box per line for cards */
+@media (max-width: 768px) {
+  .post-list,
+  .feature-grid,
+  .stats-grid {
+    display: block !important;
+  }
+  
+  .post-list .card,
+  .feature-card,
+  .stat {
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+    display: block !important;
+    height: auto !important;
+    position: static !important;
+  }
+}
+
+/* Mobile override for stats-banner: Stack stats vertically */
+@media (max-width: 768px) {
+  .stats-banner {
+    display: block !important;
+  }
+  .stats-banner .stat {
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+    display: block !important;
+    height: auto !important;
+    position: static !important;
+  }
+}
+
+.timeline {
+    position: relative;
+    padding: 3rem 0;
+    background-color: transparent!important;
 }
