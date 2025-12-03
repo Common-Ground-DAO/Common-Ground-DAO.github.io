@@ -147,3 +147,28 @@ layout: default
     </iframe>
   </div>
 </section>
+
+<section class="section">
+  <div class="container">
+    <div class="content-split">
+      <div class="content-split-image">
+        <img src="/assets/images/inter-2.avif" alt="Contribute to Common Ground">
+      </div>
+      <div class="content-split-text">
+        <h2 class="heading-2 mb-4">Contribute to a Better World</h2>
+        <p class="lead mb-6">We're building the FOSS alternative to Discord!</p>
+        <p class="text-secondary mb-4">When people share knowledge & work together, it's important that they own and govern their digital spaces.</p>
+        <p class="text-secondary mb-8">To succeed, we need Open Source Developers who help us build the most impactful community platform the world has ever seen.</p>
+        <h3 class="heading-4 mb-4">Benefits</h3>
+        <ul class="benefit-list mb-8">
+          <li>Get rewarded in $CG Tokens</li>
+          <li>Our governance token mediates ownership</li>
+          <li>Join the open source revolution</li>
+          <li>Learn and earn while contributing</li>
+          <li>More benefits to come</li>
+        </ul>
+        <a href="{{ site.repo_url }}" target="_blank" class="btn btn-primary">Make a Pull Request</a>
+      </div>
+    </div>
+  </div>
+</section>
