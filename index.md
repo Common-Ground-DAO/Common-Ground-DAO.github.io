@@ -136,3 +136,14 @@ layout: default
     </div>
   </div>
 </section>
+
+<section class="section-flush">
+  <div class="video-embed">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/{{ site.youtube_video_id }}?autoplay=1&mute=1&controls=1&loop=1&playlist={{ site.youtube_video_id }}"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
