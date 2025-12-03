@@ -813,6 +813,31 @@
   overflow: hidden;
 }
 
+/* Section with Video Background */
+.section-video-bg {
+  position: relative;
+  padding: var(--space-16) 0;
+  overflow: hidden;
+}
+
+.section-video-bg > video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  object-fit: cover;
+}
+
+.section-video-bg > .container {
+  position: relative;
+  z-index: 1;
+}
+
 /* Stats Grid */
 .stats-grid {
   display: grid;

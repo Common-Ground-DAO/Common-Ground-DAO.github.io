@@ -173,10 +173,11 @@ layout: default
   </div>
 </section>
 
-<section class="section">
+<section class="section-video-bg">
+  <video autoplay loop muted playsinline preload="metadata">
+    <source src="/assets/videos/grid.mp4" type="video/mp4">
+  </video>
   <div class="container">
-    <p class="section-eyebrow">By the Numbers</p>
-    <h2 class="heading-2 mb-8">Growing Every Day</h2>
     <div class="stats-grid">
       <div class="stat-card">
         <span class="stat-number">1M+</span>
