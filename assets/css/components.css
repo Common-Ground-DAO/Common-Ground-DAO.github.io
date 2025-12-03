@@ -492,6 +492,27 @@
   width: 100%;
   height: auto;
   border-radius: var(--radius-lg);
+  animation: float 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.split-feature-image-alt img {
+  animation-delay: -2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .split-feature-image img {
+    animation: none;
+  }
 }
 
 .split-feature-content {

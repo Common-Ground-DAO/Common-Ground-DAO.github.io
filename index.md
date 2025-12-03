@@ -110,8 +110,8 @@ layout: default
         <img src="/assets/images/product-3.png" alt="Common Ground explore and discover">
       </div>
       <div class="split-feature-content">
-        <h2 class="heading-2 mb-4">Monetize & Earn</h2>
-        <p class="lead mb-8">Our deep integration of wallets, tokens & stablecoins makes it easier than ever to monetize right within your community. No intermediaries, no fees, no bullshit.</p>
+        <h2 class="heading-2 mb-4">Identity & Wallet</h2>
+        <p class="lead mb-8">Our deep integration of wallets, tokens & digital identities empowers ecosytems of communities to connect in a trusted, self-sovereign way.</p>
         <div class="feature-list mb-6">
           <span class="feature-list-item feature-list-item-highlight">LUKSO 👑</span>
           <span class="feature-list-item feature-list-item-highlight">Fuel 👑</span>

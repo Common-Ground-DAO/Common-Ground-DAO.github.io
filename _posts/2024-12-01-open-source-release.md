@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Common Ground v2.0 Released"
+title: "Open Source Release"
 date: 2024-12-01
 ---
 
 <section class="section">
   <div class="container">
-    <p class="text-secondary mb-4">December 1, 2024</p>
+    <p class="text-secondary mb-4">November 29, 2025</p>
     <h1 class="heading-2 mb-6">{{ page.title }}</h1>
 
     <div class="post-content">
