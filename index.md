@@ -58,7 +58,7 @@ layout: default
     <div class="grid grid-2">
       <div class="feature-card">
         <span class="feature-badge">New</span>
-        <h3 class="heading-4 mt-4 mb-4">Build & Publish Apps, Games and more</h3>
+        <h3 class="heading-4 mt-4 mb-4">Build & Publish Apps & Games</h3>
         <p class="text-secondary">Common Ground features a full-scale application model, that allows you to play, publish & monetize any app, game or web page right within your community.</p>
       </div>
       <div class="feature-card">
@@ -98,6 +98,40 @@ layout: default
           <span class="feature-list-item">Private & Public Spaces</span>
           <span class="feature-list-item">Roles & Permissions</span>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="split-feature split-feature-reverse">
+      <div class="split-feature-image split-feature-image-alt">
+        <img src="/assets/images/product-3.png" alt="Common Ground explore and discover">
+      </div>
+      <div class="split-feature-content">
+        <h2 class="heading-2 mb-4">Monetize & Earn</h2>
+        <p class="lead mb-8">Our deep integration of wallets, tokens & stablecoins makes it easier than ever to monetize right within your community. No intermediaries, no fees, no bullshit.</p>
+        <div class="feature-list mb-6">
+          <span class="feature-list-item feature-list-item-highlight">LUKSO 👑</span>
+          <span class="feature-list-item feature-list-item-highlight">Fuel 👑</span>
+          <span class="feature-list-item">Arbitrum</span>
+          <span class="feature-list-item">Avalanche</span>
+          <span class="feature-list-item">Base</span>
+          <span class="feature-list-item">BSC</span>
+          <span class="feature-list-item">Cardano</span>
+          <span class="feature-list-item">Ethereum</span>
+          <span class="feature-list-item">Fantom</span>
+          <span class="feature-list-item">Gnosis</span>
+          <span class="feature-list-item">Linea</span>
+          <span class="feature-list-item">Near</span>
+          <span class="feature-list-item">Optimism</span>
+          <span class="feature-list-item">Polygon</span>
+          <span class="feature-list-item">Scroll</span>
+          <span class="feature-list-item">Solana</span>
+          <span class="feature-list-item">zkSync</span>
+        </div>
+        <p class="text-secondary text-sm">Supporting over 16 chains</p>
       </div>
     </div>
   </div>

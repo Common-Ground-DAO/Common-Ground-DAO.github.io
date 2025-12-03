@@ -19,6 +19,9 @@
   --color-background: #FAF9F7;
   --color-surface: #F0EFED;
   --color-border: #E1E0DE;
+  --color-glow-primary: rgba(123, 181, 223, 0.6);
+  --color-glow-secondary: rgba(229, 57, 53, 0.4);
+  --color-glow-tertiary: rgba(255, 215, 0, 0.3);
 
   /* Bauhaus Accents */
   --color-accent-red: #E53935;
@@ -35,6 +38,9 @@
   --color-background: #141010;
   --color-surface: #1E1A1A;
   --color-border: #2A2626;
+  --color-glow-primary: rgba(140, 195, 235, 0.7);
+  --color-glow-secondary: rgba(229, 57, 53, 0.5);
+  --color-glow-tertiary: rgba(255, 215, 0, 0.4);
 }
 
 :root {

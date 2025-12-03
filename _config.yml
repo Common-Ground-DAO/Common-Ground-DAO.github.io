@@ -20,7 +20,7 @@ fork_url: "https://github.com/Common-Ground-DAO/commonground/fork"
 actions:
   launch:
     label: "Launch"
-    text: "Start using Common Ground today. Join thousands of communities already building on the platform."
+    text: "Join thousands of communities already building on the platform."
     button: "Launch App"
   contribute:
     label: "Contribute"
