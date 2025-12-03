@@ -1,16 +1,13 @@
 ---
 layout: default
-title: Common Ground
 ---
 
 <section class="section">
-  <div class="container text-center">
-    <h1 class="heading-1 mb-6">Common Ground</h1>
-    <p class="lead max-w-2xl mx-auto mb-8">
-      A web3-native messaging and voice chat platform, built as a public good.
-    </p>
+  <div class="container">
+    <h1 class="heading-1 mb-6">{{ site.title }}</h1>
+    <p class="lead max-w-2xl mb-8">{{ site.description }}</p>
     <div>
-      <a href="https://app.cg" class="btn btn-primary btn-lg btn-pill" target="_blank">
+      <a href="{{ site.app_url }}" class="btn btn-primary btn-lg btn-pill" target="_blank">
         Launch App
       </a>
     </div>

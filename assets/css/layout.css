@@ -14,12 +14,12 @@
 /* Container - for horizontal padding within sections */
 .container {
   width: 100%;
-  padding: 0 var(--space-4);
+  padding: 0 var(--space-12);
 }
 
 @media (min-width: 768px) {
   .container {
-    padding: 0 var(--space-6);
+    padding: 0 var(--space-20);
   }
 }
 

@@ -1,60 +1,37 @@
-title: "Common Ground DAO"
-description: "Connecting web3 communities through decentralized communication"
-url: "https://common-ground-dao.github.io"
+# Site Identity
+title: "Common Ground"
+description: "The free open-source alternative to Discord."
+url: "https://dao.cg"
 baseurl: ""
 
-# Social and SEO settings
-tagline: Building the coordination layer for web3 communities
-logo: /assets/images/social-card.png  # Path to your default social image
-social:
-  name: Common Ground
-  links:
-    - https://twitter.com/CommonGround_cg
-    - https://github.com/Common-Ground-DAO
+# Links
+app_url: "https://app.cg"
+community_url: "https://app.cg/c/commonground"
+github_url: "https://github.com/Common-Ground-DAO"
+docs_url: "https://github.com/Common-Ground-DAO/Common-Ground-DAO.github.io/wiki"
+governance_url: "https://snapshot.org/#/cgdao.eth"
+twitter_url: "https://twitter.com/CommonGround_cg"
+email: "ola@dao.cg"
+
+# SEO settings
+logo: /assets/images/social-card.png
 twitter:
   username: CommonGround_cg
   card: summary_large_image
 
-# Domain Aliases (for SEO)
-domain_aliases:
-  - "https://common-ground-dao.github.io"
-
 # Build settings
 markdown: kramdown
 kramdown:
-  header_offset: 1  # This shifts all markdown headings down one level
+  header_offset: 1
 permalink: pretty
-theme: null  # Explicitly disable theme
-remote_theme: null  # Explicitly disable remote theme
+theme: null
+remote_theme: null
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-wiki
 
-# Collections
-collections:
-  pages:
-    output: true
-    permalink: /:path/
-  stakeholders:
-    output: true
-    permalink: /stakeholders/:name/
-  wiki:
-    output: true
-    permalink: /wiki/:path/
-
-# Default layouts - unified defaults array
+# Default layouts
 defaults:
-  - scope:
-      path: ""
-      type: "stakeholders"
-    values:
-      layout: stakeholder
-  - scope:
-      path: ""
-      collection: "wiki"
-    values:
-      layout: wiki
   - scope:
       path: "assets/js"
     values:
@@ -63,11 +40,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/social-card.png  # Default social image for all pages
-
-# Social links
-email: ola@dao.cg
-github_username: Common-Ground-DAO
+      image: /assets/images/social-card.png
 
 # Exclude files from processing
 exclude:
@@ -81,21 +54,13 @@ exclude:
   - CNAME
   - .cursorrules
   - "*.log"
-  - import/  # Exclude the import directory
-  - import/**/*  # Exclude all contents of the import directory
 
 # Environment-specific settings
 production: true
-compress_html: true  # Enable HTML compression in production
+compress_html: true
 sass:
-  style: compressed  # Compress CSS in production
+  style: compressed
 
-# Add .js files to the list of files Jekyll will copy
+# Include JS files
 include:
   - assets/js/*.js
-
-wiki:
-  index: true
-  index_layout: wiki
-  home: "Home"
-  baseurl: "/wiki" 

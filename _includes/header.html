@@ -2,10 +2,13 @@
   <div class="container">
     <nav>
       <a href="/" class="logo">
-        <img src="/assets/images/logo-black-transparent.svg" alt="Common Ground" class="logo-light">
-        <img src="/assets/images/logo-white-transparent.svg" alt="Common Ground" class="logo-dark">
+        <img src="/assets/images/logo-black-transparent.svg" alt="{{ site.title }}" class="logo-light">
+        <img src="/assets/images/logo-white-transparent.svg" alt="{{ site.title }}" class="logo-dark">
       </a>
       <div class="nav-links">
+        <a href="{{ site.github_url }}" target="_blank">GitHub</a>
+        <a href="{{ site.docs_url }}" target="_blank">Docs</a>
+        <a href="{{ site.governance_url }}" target="_blank">Governance</a>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
           <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="5"></circle>
@@ -22,7 +25,7 @@
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
-        <a href="https://app.cg" class="btn btn-primary btn-pill" target="_blank">Launch App</a>
+        <a href="{{ site.app_url }}" class="btn btn-primary btn-pill" target="_blank">Launch App</a>
       </div>
       <button class="burger-menu" aria-label="Toggle navigation menu">☰</button>
     </nav>
