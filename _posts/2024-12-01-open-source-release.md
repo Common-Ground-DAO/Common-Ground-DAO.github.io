@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Common Ground Goes Open Source"
+title: "Open Source Release"
 date: 2025-11-29
 featured_image: /assets/images/blog/open-source-release.svg
 ---
