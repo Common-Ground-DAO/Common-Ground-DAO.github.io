@@ -247,3 +247,112 @@
 [data-theme="dark"] .logo-dark {
   display: block;
 }
+
+/* Hero Latest Post */
+.hero-latest {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  transition: all var(--transition-base);
+}
+
+.hero-latest:hover {
+  background: var(--color-border);
+  color: var(--color-text);
+}
+
+.hero-latest-label {
+  font-weight: var(--font-semibold);
+  color: var(--color-brand);
+}
+
+.hero-latest-arrow {
+  transition: transform var(--transition-base);
+}
+
+.hero-latest:hover .hero-latest-arrow {
+  transform: translateX(2px);
+}
+
+/* Action Box */
+.action-box {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.action-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-background);
+}
+
+.action-tab {
+  flex: 1;
+  padding: var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.action-tab:hover {
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+
+.action-tab.active {
+  color: var(--color-text);
+  border-bottom-color: var(--color-brand);
+  background: var(--color-surface);
+}
+
+.action-content {
+  padding: var(--space-6);
+}
+
+.action-panel {
+  display: none;
+}
+
+.action-panel.active {
+  display: block;
+}
+
+.action-panel-link {
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  color: var(--color-brand);
+  transition: color var(--transition-base);
+}
+
+.action-panel-link:hover {
+  color: var(--color-brand-dark);
+  text-decoration: underline;
+}
+
+.action-panel-desc {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Text size utilities */
+.text-sm {
+  font-size: var(--text-sm);
+}
+
+.text-xs {
+  font-size: var(--text-xs);
+}

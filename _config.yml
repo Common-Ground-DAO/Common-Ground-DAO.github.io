@@ -1,6 +1,7 @@
 # Site Identity
 title: "Common Ground"
 description: "The free open-source alternative to Discord."
+explainer: "Build communities with real governance, token-gating, and true ownership. No ads, no tracking, no corporate overlords."
 url: "https://dao.cg"
 baseurl: ""
 
@@ -8,10 +9,31 @@ baseurl: ""
 app_url: "https://app.cg"
 community_url: "https://app.cg/c/commonground"
 github_url: "https://github.com/Common-Ground-DAO"
+repo_url: "https://github.com/Common-Ground-DAO/commonground"
 docs_url: "https://github.com/Common-Ground-DAO/Common-Ground-DAO.github.io/wiki"
 governance_url: "https://snapshot.org/#/cgdao.eth"
 twitter_url: "https://twitter.com/CommonGround_cg"
 email: "ola@dao.cg"
+fork_url: "https://github.com/Common-Ground-DAO/commonground/fork"
+
+# Actions (for hero section)
+actions:
+  launch:
+    label: "Launch"
+    text: "Start using Common Ground today. Join thousands of communities already building on the platform."
+    button: "Launch App"
+  contribute:
+    label: "Contribute"
+    text: "Join the open-source community. Report bugs, suggest features, or submit code."
+    button: "View GitHub"
+  fork:
+    label: "Fork"
+    text: "Self-host your own instance. Full control, your infrastructure, your rules."
+    button: "Fork Repo"
+  govern:
+    label: "Govern"
+    text: "Shape the future of Common Ground. Vote on proposals and help steer the project."
+    button: "Go to Snapshot"
 
 # SEO settings
 logo: /assets/images/social-card.png
