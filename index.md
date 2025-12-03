@@ -175,6 +175,39 @@ layout: default
 
 <section class="section">
   <div class="container">
+    <p class="section-eyebrow">By the Numbers</p>
+    <h2 class="heading-2 mb-8">Growing Every Day</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-number">1M+</span>
+        <span class="stat-label">Group Messages</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">501K+</span>
+        <span class="stat-label">DMs</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">64K+</span>
+        <span class="stat-label">Users</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">8.9K+</span>
+        <span class="stat-label">Blog Posts</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">5.9K+</span>
+        <span class="stat-label">Communities</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">5K+</span>
+        <span class="stat-label">Live Streams</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
     <p class="section-eyebrow">From the Blog</p>
     <h2 class="heading-2 mb-4">Latest Updates</h2>
     <p class="lead mb-8">News, tutorials, and insights from the Common Ground team.</p>
