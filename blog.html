@@ -8,17 +8,22 @@ permalink: /blog/
   <div class="container">
     <h1 class="heading-2 mb-8">Blog</h1>
 
-    <div class="post-list">
+    <div class="blog-grid">
       {% for post in site.posts %}
-      <article class="post-item mb-8">
-        <p class="text-secondary text-sm">{{ post.date | date: "%B %-d, %Y" }}</p>
-        <h2 class="heading-4 mb-2">
-          <a href="{{ post.url }}" class="link">{{ post.title }}</a>
-        </h2>
-        {% if post.excerpt %}
-        <p class="text-secondary">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+      <a href="{{ post.url }}" class="blog-card">
+        {% if post.featured_image %}
+        <div class="blog-card-image">
+          <img src="{{ post.featured_image }}" alt="{{ post.title }}" loading="lazy">
+        </div>
         {% endif %}
-      </article>
+        <div class="blog-card-content">
+          <p class="blog-card-date">{{ post.date | date: "%B %-d, %Y" }}</p>
+          <h2 class="blog-card-title">{{ post.title }}</h2>
+          {% if post.excerpt %}
+          <p class="blog-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+          {% endif %}
+        </div>
+      </a>
       {% endfor %}
     </div>
   </div>
