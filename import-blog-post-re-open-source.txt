@@ -1,0 +1,336 @@
+We're announcing the open source release
+of Common Ground about 4 years ago. It
+was us dreaming up this idea of a more
+decentralized, more community-owned
+Discord. And we've come pretty far. But
+before we rehash the history of this
+project, Yan, I would love for you to
+tell us about the key features that you
+and the team developed over the last
+four years.
+>> Florian, thank you very much. What you
+see here is us having a broadcast call
+on Common Ground, which is similar to
+Twitter spaces in a sense. This is made
+for every use case you can imagine where
+you get in touch with people. We do have
+an events functionality that aligns
+pretty well with our broadcast feature.
+I can schedule an event. I could also
+restrict the event so that it's only
+visible or joinable by certain roles.
+You also want to manage channels. You
+want to manage who can see what, who can
+access what. We do have a role system
+for that. If you go to community
+settings, roles and permissions, members
+is the general role that everybody has
+and guests is the role that is public.
+So somebody who has not yet joined your
+community can see only things that have
+been set up for guests to see. We have
+multiple other roles and we also have
+claimable roles. These are a bit
+special. These claimable roles are
+actually token gated. The token holder
+role for example has selected the common
+ground token as the gating token. And
+now you can set an amount and anyone who
+has a wallet connected and on one of
+these connected wallets the common
+ground token exists can now
+automatically go to the roles page and
+claim this role. You see that we have
+lots of chat channels here and these
+here are marked with a little lock.
+These are gated channels that are not
+accessible to everyone. And for example,
+the whales chat channel is only
+accessible to CG token whales moderators
+and the core team. And token holders can
+preview the channel but not actually see
+the content of the channel. So if I
+create a new token, you see that common
+ground supports multiple blockchains.
+basically the most common ERC token
+standards as well as LSP token standards
+because common ground also supports the
+Luxo blockchain which has been a close
+partner for us over many years now. So
+if you select a chain and then input a
+token contract the back end
+automatically detects what token it is.
+You could now save this token, add it to
+your community and after that you can
+gate all your roles and permissions with
+this specific new token. Last but not
+least, you can also extend your
+community with various new functions.
+Either use existing plugins that you can
+discover in our app store or you can add
+your own plugins. Adding plugins is
+really easy. You just go to the
+community settings, plugins, create
+plugin. And you see you can give a
+plug-in a name and a URL. And this URL
+can be any website that is embeddible as
+an iframe. Scroll further down. You can
+see that this plug-in can also be made
+discoverable on the plug-in app store.
+So other communities can also use your
+plug-in and you can also allow plugins
+to give people new roles in your
+community. You can integrate plug-in
+functionality for example payments or
+other blockchain functionality and then
+your back end will be able to manage
+user roles in your community just by
+being embedded in your community as an
+iframe. This is pretty amazing because
+you can do lots of crazy use cases with
+this and we are constantly expanding the
+API for plugins. Rest assured, we will
+build even more functionality for
+plugins in the near future.
+>> Thank you again for showing us the
+platform. You can see it's a really big
+project with many features very specific
+to our app. I hope that there is a lot
+of value for people to work with our
+open source codebase and contribute and
+help improve Quashbox and add new
+features. At least that's that's what we
+hope. We feel the platform is quite
+mature given that it's still of course
+in some sort of beta phase. Let's be
+let's be honest there. But we have a
+pretty solid user base and most
+importantly we launched a governance
+token for the common ground project. Our
+vision was always that unlike Discord or
+other traditional social media common
+ground should be userowned and we think
+a governance token can be a big step in
+that direction. So that was a big
+airdrop to all the users that have been
+on this app with us for the last four
+years rewarding them for showing up,
+joining calls, writing posts, and I hope
+a lot of people got got happy with the
+airdrop they received. And of course,
+there's a lot more to say. We also wrote
+a bunch of articles. If you go to the
+Common Ground community, you can just
+scroll through our blog posts that
+started right when we launched the
+project, and you can see pretty much
+every development stage that we took
+over the last four years. That's a
+pretty cool way to dive deeper. Yeah,
+it's it's ready to move to its next
+chapter. So, we will open source the
+entire codebase which will allow anyone
+to host their own version of Common
+Ground to make contributions, share back
+to the public so everybody can benefit
+from these improvements. But since I'm
+not the tech guy, Yan, maybe you want to
+quickly give your thoughts on the open
+sourcing.
+>> I mean, it's pretty exciting. We have
+been working a long time on this
+codebase and the code base is obviously
+not perfect. No code base of any
+open-source release ever was. But we're
+still very excited to share this code
+because the world needs more open-source
+social network or social alternatives to
+actually own the infrastructure of our
+communication and I think that's a
+really important step.
+>> Fully agree on this. We plan to open
+source under HGPL. It's the strongest
+copy left model that's currently out
+there. It's widely accepted in the open
+source community and I think it will
+ensure that common ground will develop
+further with public contributions and
+sort of oriented towards the common
+good. That's currently the plan. The
+other big step besides the open sourcing
+is that we want to do what some people
+in the research community call exit to
+community. the entire governance
+infrastructure around common ground
+should move into the common ground da
+which will be an onchain organization.
+It doesn't exist yet, but we've done our
+research and we're about to set it up
+probably in December, which will mean
+that all the token holders, which is
+currently about 180, 190 people all over
+the world, they will become the stewards
+of the project with power to govern the
+treasury that consists mostly of CG
+tokens and some crypto, but they will
+also be stewards of the common ground
+license. So I mentioned we want a
+license under HPL but maybe in the
+future there will be some change for
+whatever reason the community believes
+it should be a different license. So all
+of those core functions will be moved
+and handed over to the community. We
+hope that there will be a lot of
+interest in governing common ground. We
+hope that it will be easy to facilitate
+with all these plugins which will
+hopefully make the governance of all of
+this a really cool extension of the
+platform itself. Yeah, besides that we
+have another strategic goal in mind
+obviously now as just two among many
+participants. So I think it's important
+and exciting to hear about it quickly
+from Yan who's the core person behind
+this new strategic direction. I think it
+is really a great match to bring games
+into common ground. Gaming communities
+can organize around their game, organize
+with the developers on self-owned
+infrastructure and due to the open
+nature of the platform, it is very easy
+for projects to customize the experience
+for their community around their game or
+their content. Some magic components
+come together here. All right, that was
+a quick 360 of Common Ground's past,
+Common Ground's future, and the product
+that we've built. We hope it's exciting
+for you. We hope you're interested in
+becoming an open-source contributor to
+Common Ground. Be it as a you know
+governance person, be it as a developer
+on the codebase, be it as someone that
+helps to write documentation. There are
+a lot of ways that we think people can
+bring value to this emerging community
+and emerging project. The DAO has a big
+stash of tokens that it will use to
+reward all contributors, be it technical
+or non-technical. And we hope that this
+way we can really continue building this
+project into a successful, widely used,
+well-maintained open-source platform for
+the future web. And maybe Yan you want
+to share sort of your vision around say
+many people host their own instance of
+common ground how we will bring all of
+that together in a sort of a
+decentralized network because I think
+this is the missing piece.
+>> Absolutely. Yeah. First of all the first
+layer of decentralization is that anyone
+can host their own common ground
+instance. So this way we have
+decentralized instances that are hosted
+by several people that can be connected
+on various levels. One direction that we
+could take would be to build like a
+common ground protocol specifically made
+for common ground platforms to
+communicate with each other. The other
+way is connecting common ground to
+existing protocols. There are many
+existing protocols out there. For
+example, for chat this would be matrix
+or IRC. For articles and posts and
+social content this would be activity
+pub. There are several protocols out
+there by supporting which common ground
+could become part of already existing
+decentralized structures. Maybe we don't
+want to build our own here but at the
+same time we want to connect to all
+these decentralized platforms and
+projects so that common ground becomes
+like the social hub that connects it
+all. The second step of decentralization
+is the plug-in infrastructure because
+everybody can host their own plugins or
+their own content or their own
+functionality for common ground and
+integrated into the platform. Basically,
+the platform becomes very open to
+community generated content and
+community managed projects. And the
+third way how common ground can be
+centralized is that you also want to be
+able to embed common ground into
+existing projects. For example, if you
+have a website, then it would be really
+nice if you could integrate your
+community activity feed. If you could
+integrate community chats, you might be
+able to integrate common ground even in
+your Android or iOS app. And I think
+with these three legs, we can basically
+bring it everywhere.
+>> That's a really important addition to
+what we just said. Something you didn't
+mention that I find really exciting also
+is this idea that we can use our plug-in
+architecture or sort of leverage the
+general principles behind it to create
+one base common ground that can
+integrate all the other existing common
+ground instances. We could build a
+decentralized
+hub for all existing common ground
+instances without even having to build a
+synchronization protocol. is really
+leveraging our embedding infrastructure
+to embed other common grounds into one
+sort of meta common ground. It seems
+quite feasible that we can do this and I
+think it would be really neat to both
+have self-hosted instances but still
+have one sort of meta instance that
+allows me to discover all those
+self-hosted instances. This is also a
+really exciting and sort of necessary
+building block for this vision that
+we're pursuing. The general idea is that
+when you have your own common ground
+instance somewhere, let's say it's your
+home instance or you may even have two
+or three home instances, then you can
+also bring communities on content from
+other instances into your sidebar and
+let's say so you can achieve quite a
+level of federation with that.
+>> That's really cool. So there is a lot of
+ideas how we can take this further. It
+all hinges on the community being ready
+to support this. This is now becoming a
+public good. So it really depends on the
+community supporting us or supporting
+itself really. Us as the founders of
+course we will stay very much involved.
+Our heart and soul is in this project.
+We think now is the time to try this. We
+have a strong community that loves us
+and uses us every day. We have a token
+out there and we have all the necessary
+ingredients to try it and this will be
+the attempt to do it. We hope that you
+accompany us on this journey, that you
+support us on this journey, and that you
+can see yourself be really deeply
+involved in this project because that's
+really what we need. So, thank you
+everybody. We're really excited that
+you're on this journey with us, and see
+you on Common Ground.
+>> Thank you everyone. See you on common
+ground.
