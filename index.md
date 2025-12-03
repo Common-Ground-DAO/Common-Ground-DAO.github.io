@@ -43,3 +43,62 @@ layout: default
     </div>
   </div>
 </section>
+
+<section class="section-flush">
+  <video autoplay loop muted playsinline preload="metadata">
+    <source src="/assets/videos/product-trailer.mp4" type="video/mp4">
+  </video>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="section-eyebrow">Play & Stream all the things</p>
+    <h2 class="heading-2 mb-4">Games & Apps</h2>
+    <p class="lead mb-8">Gaming like never before - play with friends instantly, anywhere, right in your browser.</p>
+    <div class="grid grid-2">
+      <div class="feature-card">
+        <span class="feature-badge">New</span>
+        <h3 class="heading-4 mt-4 mb-4">Build & Publish Apps, Games and more</h3>
+        <p class="text-secondary">Common Ground features a full-scale application model, that allows you to play, publish & monetize any app, game or web page right within your community.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-badge">New</span>
+        <h3 class="heading-4 mt-4 mb-4">SDK & Sample Apps</h3>
+        <p class="text-secondary">Create a deep integration between your app and Common Ground: build on our user account & community model with our SDK and get started in minutes.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-badge">New</span>
+        <h3 class="heading-4 mt-4 mb-4">Open Source Everything</h3>
+        <p class="text-secondary">Common Ground is entirely open source, including the games & apps we're publishing for our communities.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-badge feature-badge-muted">Soon</span>
+        <h3 class="heading-4 mt-4 mb-4">Much, much more</h3>
+        <p class="text-secondary">We're only getting started. The community super app for the new Web wasn't built in a day!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="split-feature">
+      <div class="split-feature-image">
+        <img src="/assets/images/product-1.avif" alt="Common Ground app on mobile">
+      </div>
+      <div class="split-feature-content">
+        <h2 class="heading-2 mb-4">Community, friends, live streams & events — all in one place</h2>
+        <p class="lead mb-8">Build a more active community with everything you need in one place. Easy to use and fun, of course!</p>
+        <div class="feature-list">
+          <span class="feature-list-item">Chats</span>
+          <span class="feature-list-item">Video Calls & Live Streams</span>
+          <span class="feature-list-item">Blogging</span>
+          <span class="feature-list-item">Gaming & Apps</span>
+          <span class="feature-list-item">Tokens</span>
+          <span class="feature-list-item">Private & Public Spaces</span>
+          <span class="feature-list-item">Roles & Permissions</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
