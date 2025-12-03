@@ -172,3 +172,31 @@ layout: default
     </div>
   </div>
 </section>
+
+<section class="section">
+  <div class="container">
+    <p class="section-eyebrow">From the Blog</p>
+    <h2 class="heading-2 mb-4">Latest Updates</h2>
+    <p class="lead mb-8">News, tutorials, and insights from the Common Ground team.</p>
+
+    <div class="blog-slider">
+      {% for post in site.posts limit:6 %}
+      <a href="{{ post.url }}" class="blog-card">
+        {% if post.featured_image %}
+        <div class="blog-card-image">
+          <img src="{{ post.featured_image }}" alt="{{ post.title }}" loading="lazy">
+        </div>
+        {% endif %}
+        <div class="blog-card-content">
+          <p class="blog-card-date">{{ post.date | date: "%B %d, %Y" }}</p>
+          <h3 class="blog-card-title">{{ post.title }}</h3>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-8">
+      <a href="/blog" class="btn btn-secondary">View All Posts</a>
+    </div>
+  </div>
+</section>

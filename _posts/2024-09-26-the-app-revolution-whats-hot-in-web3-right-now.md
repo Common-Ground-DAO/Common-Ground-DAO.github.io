@@ -2,6 +2,7 @@
 layout: default
 title: "The App Revolution: what's hot in web3 right now?"
 date: 2024-09-26
+featured_image: /assets/images/blog/common-ground-devcon-bangkok.avif
 ---
 
 <section class="section">

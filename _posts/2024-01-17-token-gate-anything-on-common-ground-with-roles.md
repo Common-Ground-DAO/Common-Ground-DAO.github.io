@@ -2,6 +2,7 @@
 layout: default
 title: "Token gate anything on Common Ground with Roles"
 date: 2024-01-17
+featured_image: /assets/images/blog/web3-social-roundup-5.webp
 ---
 
 <section class="section">

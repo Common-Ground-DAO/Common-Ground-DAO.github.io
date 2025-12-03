@@ -2,6 +2,7 @@
 layout: default
 title: "Login with Fuel is live on Common Ground"
 date: 2023-09-15
+featured_image: /assets/images/blog/login-with-fuel.webp
 ---
 
 <section class="section">

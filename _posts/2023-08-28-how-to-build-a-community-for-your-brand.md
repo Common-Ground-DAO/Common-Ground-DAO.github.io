@@ -2,6 +2,7 @@
 layout: default
 title: "How to build a community for your brand"
 date: 2023-08-28
+featured_image: /assets/images/blog/build-community-for-brand.webp
 ---
 
 <section class="section">

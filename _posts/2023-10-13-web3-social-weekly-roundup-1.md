@@ -2,6 +2,7 @@
 layout: default
 title: "Web3 Social: weekly round up #1"
 date: 2023-10-13
+featured_image: /assets/images/blog/web3-social-roundup-1.avif
 ---
 
 <section class="section">

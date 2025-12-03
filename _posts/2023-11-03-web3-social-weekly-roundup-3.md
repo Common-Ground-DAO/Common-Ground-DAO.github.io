@@ -2,6 +2,7 @@
 layout: default
 title: "Web3 Social: weekly round up #3"
 date: 2023-11-03
+featured_image: /assets/images/blog/web3-social-roundup-3.webp
 ---
 
 <section class="section">

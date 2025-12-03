@@ -2,6 +2,7 @@
 layout: default
 title: "Quadratic Voting: Fostering Fairness in Online Communities"
 date: 2023-07-10
+featured_image: /assets/images/blog/quadratic-voting.webp
 ---
 
 <section class="section">

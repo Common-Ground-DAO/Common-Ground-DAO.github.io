@@ -2,6 +2,7 @@
 layout: default
 title: "Community Building - what it is, how to do it and what it means"
 date: 2023-05-23
+featured_image: /assets/images/blog/community-building.webp
 ---
 
 <section class="section">

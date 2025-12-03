@@ -2,6 +2,7 @@
 layout: default
 title: "Web3 Magic: How to create a paid membership community on Common Ground with Unlock Protocol"
 date: 2024-04-19
+featured_image: /assets/images/blog/web3-social-roundup-8.avif
 ---
 
 <section class="section">

@@ -2,6 +2,7 @@
 layout: default
 title: "A Beginner's Guide to Building Communities in the Web3 Era with Common Ground"
 date: 2023-09-07
+featured_image: /assets/images/blog/beginners-guide-web3-communities.webp
 ---
 
 <section class="section">

@@ -2,6 +2,7 @@
 layout: default
 title: "Everything you were afraid to ask about web3"
 date: 2023-09-29
+featured_image: /assets/images/blog/everything-afraid-to-ask-web3.avif
 ---
 
 <section class="section">

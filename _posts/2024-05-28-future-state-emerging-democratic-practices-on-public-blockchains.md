@@ -2,6 +2,7 @@
 layout: default
 title: "Future State: Exploring Emerging Democratic Practices on Public Blockchains"
 date: 2024-05-28
+featured_image: /assets/images/blog/web3-social-roundup-10.avif
 ---
 
 <section class="section">

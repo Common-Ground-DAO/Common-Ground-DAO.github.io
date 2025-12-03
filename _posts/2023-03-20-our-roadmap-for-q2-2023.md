@@ -2,6 +2,7 @@
 layout: default
 title: "Our Roadmap for Q2 2023"
 date: 2023-03-20
+featured_image: /assets/images/blog/roadmap-q2-2023.webp
 ---
 
 <section class="section">

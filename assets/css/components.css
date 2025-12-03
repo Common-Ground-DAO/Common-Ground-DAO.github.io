@@ -666,3 +666,115 @@
   color: var(--color-brand);
   font-weight: var(--font-semibold);
 }
+
+/* Blog Slider */
+.blog-slider {
+  display: flex;
+  gap: var(--space-6);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--space-4);
+  margin-bottom: calc(-1 * var(--space-4));
+}
+
+/* Hide scrollbar but keep functionality */
+.blog-slider::-webkit-scrollbar {
+  height: 8px;
+}
+
+.blog-slider::-webkit-scrollbar-track {
+  background: var(--color-surface);
+  border-radius: var(--radius-full);
+}
+
+.blog-slider::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+.blog-slider::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
+/* Blog Card */
+.blog-card {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-brand);
+}
+
+.blog-card-image {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  background: var(--color-background);
+}
+
+.blog-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.blog-card:hover .blog-card-image img {
+  transform: scale(1.05);
+}
+
+.blog-card-content {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.blog-card-date {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+
+.blog-card-title {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-text);
+  line-height: var(--leading-tight);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .blog-card {
+    flex: 0 0 320px;
+  }
+
+  .blog-card-image {
+    height: 180px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-card {
+    flex: 0 0 360px;
+  }
+
+  .blog-card-image {
+    height: 200px;
+  }
+}

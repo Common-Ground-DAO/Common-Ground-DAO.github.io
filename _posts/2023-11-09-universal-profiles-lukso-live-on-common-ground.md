@@ -2,6 +2,7 @@
 layout: default
 title: "Universal Profiles by LUKSO are live on Common Ground"
 date: 2023-11-09
+featured_image: /assets/images/blog/web3-social-roundup-4.webp
 ---
 
 <section class="section">

@@ -2,6 +2,7 @@
 layout: default
 title: "Ecosystems as Groups of Groups: a new primitive in large-scale coordination?"
 date: 2024-09-05
+featured_image: /assets/images/blog/common-ground-joins-lsp-grants-2.avif
 ---
 
 <section class="section">

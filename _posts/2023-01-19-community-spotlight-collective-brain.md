@@ -2,6 +2,7 @@
 layout: default
 title: "Community Spotlight - Collective Brain"
 date: 2023-01-19
+featured_image: /assets/images/blog/collective-brain.avif
 ---
 
 <section class="section">

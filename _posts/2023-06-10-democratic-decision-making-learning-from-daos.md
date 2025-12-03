@@ -2,6 +2,7 @@
 layout: default
 title: "Embracing Democratic Decision-Making: Learning from DAOs for Online Communities"
 date: 2023-06-10
+featured_image: /assets/images/blog/democratic-decision-making-daos.webp
 ---
 
 <section class="section">

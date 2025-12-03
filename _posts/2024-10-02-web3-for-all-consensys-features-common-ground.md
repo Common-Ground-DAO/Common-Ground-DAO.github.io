@@ -2,6 +2,7 @@
 layout: default
 title: "Web3 for All"
 date: 2024-10-02
+featured_image: /assets/images/blog/common-ground-devcon-2024.avif
 ---
 
 <section class="section">

@@ -2,6 +2,7 @@
 layout: default
 title: "Building the Future: Social Composability and Onchain Organizations"
 date: 2024-07-30
+featured_image: /assets/images/blog/common-ground-joins-lsp-grants.avif
 ---
 
 <section class="section">

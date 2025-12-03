@@ -2,6 +2,7 @@
 layout: default
 title: "Introducing Smart Wallets on Common Ground"
 date: 2024-05-10
+featured_image: /assets/images/blog/web3-social-roundup-9.avif
 ---
 
 <section class="section">

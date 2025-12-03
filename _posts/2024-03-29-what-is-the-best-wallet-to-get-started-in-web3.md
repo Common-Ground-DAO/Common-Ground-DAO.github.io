@@ -2,6 +2,7 @@
 layout: default
 title: "What is the best wallet to get started in web3?"
 date: 2024-03-29
+featured_image: /assets/images/blog/common-ground-2024-roadmap.avif
 ---
 
 <section class="section">

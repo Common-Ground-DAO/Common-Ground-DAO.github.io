@@ -2,6 +2,7 @@
 layout: default
 title: "5 tips for building your community as a creator"
 date: 2023-08-29
+featured_image: /assets/images/blog/5-tips-building-community-creator.avif
 ---
 
 <section class="section">

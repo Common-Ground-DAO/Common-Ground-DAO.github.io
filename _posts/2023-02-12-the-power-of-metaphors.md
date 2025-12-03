@@ -2,6 +2,7 @@
 layout: default
 title: "The power of metaphors"
 date: 2023-02-12
+featured_image: /assets/images/blog/power-of-metaphors.webp
 ---
 
 <section class="section">

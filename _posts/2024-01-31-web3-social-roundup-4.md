@@ -2,6 +2,7 @@
 layout: default
 title: "Web3 Social: round up #4"
 date: 2024-01-31
+featured_image: /assets/images/blog/common-ground-manifesto.avif
 ---
 
 <section class="section">

@@ -2,6 +2,7 @@
 layout: default
 title: "Building a Web3-native Community Platform"
 date: 2023-05-18
+featured_image: /assets/images/blog/building-web3-native-community-platform.webp
 ---
 
 <section class="section">
