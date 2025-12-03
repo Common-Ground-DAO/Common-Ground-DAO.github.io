@@ -1,28 +1,133 @@
-/* base.css - Reset, CSS Variables, and Typography Defaults */
+/* base.css - Reset & CSS Variables */
 
-/* CSS Reset */
-* {
+/* Reset */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* CSS Variables for breakpoints and theming */
+/* CSS Variables */
 :root {
-  --breakpoint-xs: 480px;
-  --breakpoint-sm: 768px;
-  --breakpoint-md: 992px;
-  --breakpoint-lg: 1200px;
-  
-  --primary-color: #333;
-  --secondary-color: #666;
-  --font-family-base: Arial, sans-serif;
+  /* Light Mode Colors (default) */
+  --color-brand: rgb(123, 181, 223);
+  --color-brand-dark: rgb(98, 145, 178);
+  --color-text: #2C353D;
+  --color-text-secondary: #57606a;
+  --color-background: #FAF9F7;
+  --color-surface: #F0EFED;
+  --color-border: #E1E0DE;
+
+  /* Bauhaus Accents */
+  --color-accent-red: #E53935;
+  --color-accent-yellow: #FFD700;
+  --color-accent-blue: #1E88E5;
 }
 
-/* Typography Defaults */
+/* Dark Mode */
+[data-theme="dark"] {
+  --color-brand: rgb(140, 195, 235);
+  --color-brand-dark: rgb(123, 181, 223);
+  --color-text: #F5F5F5;
+  --color-text-secondary: #A0A0A0;
+  --color-background: #141010;
+  --color-surface: #1E1A1A;
+  --color-border: #2A2626;
+}
+
+:root {
+
+  /* Typography Scale (fluid) */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.25vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.25rem + 1.25vw, 2rem);
+  --text-3xl: clamp(2rem, 1.5rem + 2.5vw, 3rem);
+  --text-4xl: clamp(2.5rem, 2rem + 3vw, 4rem);
+
+  /* Font Families */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Font Weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Line Heights */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+
+  /* Spacing Scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+
+  /* Layout */
+  --page-max-width: 1080px;
+  --header-height: 80px;
+}
+
+/* Base Styles */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
-  font-family: var(--font-family-base);
-  font-size: 16px;
-  line-height: 1.5;
-  color: var(--primary-color);
-} 
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  transition: background-color var(--transition-slow), color var(--transition-slow);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}

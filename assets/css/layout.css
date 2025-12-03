@@ -1,51 +1,43 @@
-/* layout.css - Layout Structures: Grid System, Containers, Header, Footer, etc. */
+/* layout.css - Layout & Structure */
 
-.container {
-  width: 90%;
-  max-width: 1200px;
+/* Page Frame - the main content column with side borders */
+.page-frame {
+  max-width: var(--page-max-width);
   margin: 0 auto;
-}
-
-.header, .footer {
-  padding: 1em;
-  background-color: var(--secondary-color);
-  color: #fff;
-}
-
-.row {
+  min-height: 100vh;
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
   display: flex;
-  flex-wrap: wrap;
-  margin: 0 -15px; /* gutter adjustment */
+  flex-direction: column;
 }
 
-.col {
-  flex: 1;
-  padding: 0 15px;
+/* Container - for horizontal padding within sections */
+.container {
+  width: 100%;
+  padding: 0 var(--space-4);
 }
 
-/* Clearfix for floated elements */
-.clearfix::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-/* Responsive adjustments using breakpoints from base.css */
-@media (max-width: var(--breakpoint-sm)) {
-  .header, .footer {
-    text-align: center;
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--space-6);
   }
 }
 
-/* --- Consolidated Core Layout Styles from templates.css --- */
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition-slow);
+}
 
-/* Header Styles */
 header nav {
-  height: 80px;
+  height: var(--header-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
 }
 
 header .logo {
@@ -59,76 +51,180 @@ header .logo img {
   width: auto;
 }
 
-header .nav-links {
+/* Desktop Navigation */
+.nav-links {
   display: flex;
-  gap: 2rem;
+  gap: var(--space-8);
   align-items: center;
 }
 
-header .nav-links a {
-  color: var(--text-color);
-  text-decoration: none;
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  padding: 0.5rem 0;
-  position: relative;
+.nav-links a:not(.btn) {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text);
+  transition: color var(--transition-base);
 }
 
-header .nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--brand-color);
-  transition: width 0.3s;
+.nav-links a:not(.btn):hover {
+  color: var(--color-brand);
 }
 
-header .nav-links a:hover::after {
-  width: 100%;
-}
-
-header .nav-links a.active::after {
-  width: 100%;
+/* Burger Menu */
+.burger-menu {
+  display: none;
+  font-size: 1.5rem;
+  padding: var(--space-2);
+  color: var(--color-text);
 }
 
 /* Mobile Navigation */
-.burger-menu {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  color: var(--text-color);
-}
-
 @media (max-width: 768px) {
   .burger-menu {
     display: block;
   }
-  header .nav-links {
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-background);
     flex-direction: column;
-    display: none;
+    justify-content: center;
+    gap: var(--space-6);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-base), visibility var(--transition-base);
+    z-index: 99;
   }
-  header .nav-links.open {
-    display: flex;
+
+  .nav-links.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links a:not(.btn) {
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+  }
+
+  header nav {
+    position: relative;
+    z-index: 100;
   }
 }
 
-/* Main Content Styles */
+/* Main Content */
 main {
-  padding: 1rem;
+  flex: 1;
 }
 
-.content-container {
-  margin: 1rem 0;
+/* Section */
+.section {
+  padding: var(--space-16) 0;
+  border-bottom: 1px solid var(--color-border);
 }
 
-/* Footer Styles */
+.section:last-child {
+  border-bottom: none;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--space-24) 0;
+  }
+}
+
+/* Footer */
 footer {
-  background: var(--secondary-color);
-  color: #fff;
-  padding: 1rem;
-} 
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-12) 0;
+  transition: background-color var(--transition-slow);
+}
+
+.footer-content {
+  display: grid;
+  gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--space-12);
+  }
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: var(--space-4);
+}
+
+.footer-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.footer-info p {
+  color: var(--color-text-secondary);
+  max-width: 300px;
+}
+
+.footer-links h4 {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-4);
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: var(--space-2);
+}
+
+.footer-links a {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  transition: color var(--transition-base);
+}
+
+.footer-links a:hover {
+  color: var(--color-brand);
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--color-background);
+  transition: transform var(--transition-base), background var(--transition-base);
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  background: var(--color-border);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-text);
+}
+
+.social-icon.cg {
+  width: 24px;
+  height: 24px;
+}

@@ -6,15 +6,16 @@
   <title>{{ page.title | default: "Common Ground" }}</title>
   {% include head.html %}
   <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/assets/js/theme-toggle.js"></script>
 </head>
 <body>
-  {% include header.html %}
-  <main>
-    {{ content }}
-  </main>
-  {% include footer.html %}
-  <script src="/assets/js/vendor.bundle.js"></script>
+  <div class="page-frame">
+    {% include header.html %}
+    <main>
+      {{ content }}
+    </main>
+    {% include footer.html %}
+  </div>
   <script src="/assets/js/mobile-nav.js"></script>
-  <script src="/assets/js/network-viz.js"></script>
 </body>
 </html> 
