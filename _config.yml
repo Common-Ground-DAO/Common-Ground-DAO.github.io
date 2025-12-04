@@ -15,6 +15,8 @@ governance_url: "https://snapshot.org/#/cgdao.eth"
 twitter_url: "https://twitter.com/CommonGround_cg"
 email: "ola@dao.cg"
 fork_url: "https://github.com/Common-Ground-DAO/commonground/fork"
+apps_guide_url: "https://app.cg/c/commonground/article/new-cg-feature-apps-kfiTKTGVe52ygEDBv8RJ4f/"
+sdk_url: "https://github.com/Common-Ground-DAO/cg-base-plugin"
 youtube_video_id: "yMpYiRUlIrI"
 
 # Actions (for hero section)

@@ -61,17 +61,20 @@ layout: default
       <div class="feature-card">
         <span class="feature-badge">New</span>
         <h3 class="heading-4 mt-4 mb-4">Build & Publish Apps & Games</h3>
-        <p class="text-secondary">Common Ground features a full-scale application model, that allows you to play, publish & monetize any app, game or web page right within your community.</p>
+        <p class="text-secondary mb-4">Common Ground features a full-scale application model, that allows you to play, publish & monetize any app, game or web page right within your community.</p>
+        <a href="{{ site.apps_guide_url }}" target="_blank" class="link">Get Started →</a>
       </div>
       <div class="feature-card">
         <span class="feature-badge">New</span>
         <h3 class="heading-4 mt-4 mb-4">SDK & Sample Apps</h3>
-        <p class="text-secondary">Create a deep integration between your app and Common Ground: build on our user account & community model with our SDK and get started in minutes.</p>
+        <p class="text-secondary mb-4">Create a deep integration between your app and Common Ground: build on our user account & community model with our SDK and get started in minutes.</p>
+        <a href="{{ site.sdk_url }}" target="_blank" class="link">Get Started →</a>
       </div>
       <div class="feature-card">
         <span class="feature-badge">New</span>
         <h3 class="heading-4 mt-4 mb-4">Open Source Everything</h3>
-        <p class="text-secondary">Common Ground is entirely open source, including the games & apps we're publishing for our communities.</p>
+        <p class="text-secondary mb-4">Common Ground is entirely open source, including the games & apps we're publishing for our communities.</p>
+        <a href="{{ site.github_url }}" target="_blank" class="link">Get Started →</a>
       </div>
       <div class="feature-card">
         <span class="feature-badge feature-badge-muted">Soon</span>
