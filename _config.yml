@@ -19,6 +19,19 @@ apps_guide_url: "https://app.cg/c/commonground/article/new-cg-feature-apps-kfiTK
 sdk_url: "https://github.com/Common-Ground-DAO/cg-base-plugin"
 youtube_video_id: "yMpYiRUlIrI"
 
+# Screenshots for media carousel
+screenshots:
+  - "https://raw.githubusercontent.com/Common-Ground-DAO/commonground/main/screenshots/01.webp"
+  - "https://raw.githubusercontent.com/Common-Ground-DAO/commonground/main/screenshots/02.webp"
+  - "https://raw.githubusercontent.com/Common-Ground-DAO/commonground/main/screenshots/03.webp"
+  - "https://raw.githubusercontent.com/Common-Ground-DAO/commonground/main/screenshots/04.webp"
+  - "https://raw.githubusercontent.com/Common-Ground-DAO/commonground/main/screenshots/05.webp"
+  - "https://raw.githubusercontent.com/Common-Ground-DAO/commonground/main/screenshots/06.webp"
+  - "https://raw.githubusercontent.com/Common-Ground-DAO/commonground/main/screenshots/07.webp"
+  - "https://raw.githubusercontent.com/Common-Ground-DAO/commonground/main/screenshots/08.webp"
+  - "https://raw.githubusercontent.com/Common-Ground-DAO/commonground/main/screenshots/09.webp"
+  - "https://raw.githubusercontent.com/Common-Ground-DAO/commonground/main/screenshots/10.webp"
+
 # Actions (for hero section)
 actions:
   launch:

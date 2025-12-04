@@ -46,10 +46,29 @@ layout: default
   </div>
 </section>
 
-<section class="section-flush hide-mobile">
-  <video autoplay loop muted playsinline preload="metadata">
-    <source src="/assets/videos/product-trailer.mp4" type="video/mp4">
-  </video>
+<section class="section-flush hide-mobile media-carousel">
+  <div class="carousel-track">
+    <div class="carousel-slide active">
+      <video autoplay loop muted playsinline preload="metadata">
+        <source src="/assets/videos/product-trailer.mp4" type="video/mp4">
+      </video>
+    </div>
+    {% for screenshot in site.screenshots %}
+    <div class="carousel-slide">
+      <img src="{{ screenshot }}" alt="Common Ground screenshot" loading="lazy">
+    </div>
+    {% endfor %}
+  </div>
+  <button class="carousel-btn carousel-btn-prev" aria-label="Previous slide">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
+  <button class="carousel-btn carousel-btn-next" aria-label="Next slide">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </button>
 </section>
 
 <section class="section hide-mobile">
