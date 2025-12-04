@@ -32,6 +32,45 @@ screenshots:
   - "https://raw.githubusercontent.com/Common-Ground-DAO/commonground/main/screenshots/09.webp"
   - "https://raw.githubusercontent.com/Common-Ground-DAO/commonground/main/screenshots/10.webp"
 
+# Community videos for ticker
+community_videos:
+  - "f4qBO-mntcw"
+  - "wk4URGcRFUw"
+  - "BJvC_hTWlFQ"
+  - "E1HvAm564Fk"
+  - "TyohxqqEgoM"
+  - "h6kL68HAWE0"
+  - "F6Xz3_zeCwo"
+  - "CpCOaPkajbY"
+  - "M_JlVMOtDeM"
+  - "NUErnnp1tCQ"
+  - "LmAtfOpwBxw"
+  - "Q2_lQZexKa8"
+  - "8pvOLEqGg04"
+  - "g6u5CYWuW6Y"
+  - "S2yDGnJQdl8"
+  - "QVnmS83Q1ss"
+  - "USf7RXfp5Rw"
+  - "-zHBVqz_ohk"
+  - "5Aeu2VPvocE"
+  - "9EZLrHhisdo"
+  - "5MYkF_9zpHA"
+  - "rIKCphU8Scg"
+  - "IZYzsEyTJxs"
+  - "Rr4ykR-JQ3c"
+
+  # Podcast videos for ticker
+podcast_videos:
+  - "DBGPrswfpmo&t=2s"
+  - "AuG5yaaBJiA"
+  - "XMxlU3qKwZY"
+  - "8Cg2VIy0Xhg&t=57s"
+  - "1zNkBwdyFNE"
+  - "_IMNS-_H7mo"
+  - "1u-Ngmix-r8"
+  - "W6pWhDBrhxY"
+  - "34Fo1-8y18U"
+
 # Actions (for hero section)
 actions:
   launch:

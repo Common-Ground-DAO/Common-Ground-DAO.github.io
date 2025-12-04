@@ -104,6 +104,23 @@ layout: default
   </div>
 </section>
 
+<section class="section-flush hide-mobile video-ticker">
+  <div class="ticker-track">
+    {% for video_id in site.community_videos %}
+    <a href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" class="ticker-item">
+      <img src="https://img.youtube.com/vi/{{ video_id }}/mqdefault.jpg" alt="Community video" loading="lazy">
+      <span class="ticker-play-icon">▶</span>
+    </a>
+    {% endfor %}
+    {% for video_id in site.community_videos %}
+    <a href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" class="ticker-item">
+      <img src="https://img.youtube.com/vi/{{ video_id }}/mqdefault.jpg" alt="Community video" loading="lazy">
+      <span class="ticker-play-icon">▶</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
 <section class="section hide-mobile">
   <div class="container">
     <div class="split-feature">
