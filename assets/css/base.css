@@ -12,8 +12,8 @@
 /* CSS Variables */
 :root {
   /* Light Mode Colors (default) */
-  --color-brand: rgb(123, 181, 223);
-  --color-brand-dark: rgb(98, 145, 178);
+  --color-brand: rgb(30, 136, 229);
+  --color-brand-dark: rgb(21, 101, 170);
   --color-text: #2C353D;
   --color-text-secondary: #57606a;
   --color-background: #FAF9F7;

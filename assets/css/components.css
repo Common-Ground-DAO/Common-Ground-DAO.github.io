@@ -357,7 +357,7 @@
 }
 
 .action-panel-link {
-  font-size: var(--text-base);
+  font-size: var(--text-xl);
   font-weight: var(--font-medium);
   color: var(--color-brand);
   transition: color var(--transition-base);
