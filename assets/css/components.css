@@ -258,6 +258,22 @@
   display: block;
 }
 
+/* Hero Section */
+.hero-section {
+  position: relative;
+}
+
+.github-star-btn {
+  position: absolute;
+  top: var(--space-8);
+  right: var(--space-6);
+}
+
+/* Mobile-only elements (hidden by default) */
+.show-mobile-only {
+  display: none;
+}
+
 /* Hero Latest Post */
 .hero-latest {
   display: inline-flex;

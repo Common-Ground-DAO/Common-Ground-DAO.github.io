@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<section class="section">
+<section class="section hero-section">
   <div class="container">
     {% if site.posts.size > 0 %}
     <a href="{{ site.posts.first.url }}" class="hero-latest mb-6">
@@ -15,7 +15,9 @@ layout: default
     <h1 class="heading-1 mb-6">{{ site.description }}</h1>
     <p class="lead max-w-2xl mb-8">{{ site.explainer }}</p>
 
-    <div class="action-box">
+    <a href="{{ site.app_url }}" class="btn btn-primary btn-lg btn-pill show-mobile-only mb-6" target="_blank">Launch App</a>
+
+    <div class="action-box hide-mobile">
       <div class="action-tabs">
         <button class="action-tab active" data-tab="panel-launch">{{ site.actions.launch.label }}</button>
         <button class="action-tab" data-tab="panel-contribute">{{ site.actions.contribute.label }}</button>
@@ -44,13 +46,13 @@ layout: default
   </div>
 </section>
 
-<section class="section-flush">
+<section class="section-flush hide-mobile">
   <video autoplay loop muted playsinline preload="metadata">
     <source src="/assets/videos/product-trailer.mp4" type="video/mp4">
   </video>
 </section>
 
-<section class="section">
+<section class="section hide-mobile">
   <div class="container">
     <p class="section-eyebrow">Play & Stream all the things</p>
     <h2 class="heading-2 mb-4">Games & Apps</h2>
@@ -80,7 +82,7 @@ layout: default
   </div>
 </section>
 
-<section class="section">
+<section class="section hide-mobile">
   <div class="container">
     <div class="split-feature">
       <div class="split-feature-image">
@@ -103,7 +105,7 @@ layout: default
   </div>
 </section>
 
-<section class="section">
+<section class="section hide-mobile">
   <div class="container">
     <div class="split-feature split-feature-reverse">
       <div class="split-feature-image split-feature-image-alt">
@@ -137,7 +139,7 @@ layout: default
   </div>
 </section>
 
-<section class="section-flush">
+<section class="section-flush hide-mobile">
   <div class="video-embed">
     <iframe
       src="https://www.youtube-nocookie.com/embed/{{ site.youtube_video_id }}?autoplay=1&mute=1&controls=1&loop=1&playlist={{ site.youtube_video_id }}"
@@ -148,7 +150,7 @@ layout: default
   </div>
 </section>
 
-<section class="section">
+<section class="section hide-mobile">
   <div class="container">
     <div class="content-split">
       <div class="content-split-image">
@@ -173,7 +175,7 @@ layout: default
   </div>
 </section>
 
-<section class="section-video-bg">
+<section class="section-video-bg hide-mobile">
   <video autoplay loop muted playsinline preload="metadata">
     <source src="/assets/videos/grid.mp4" type="video/mp4">
   </video>
@@ -207,7 +209,7 @@ layout: default
   </div>
 </section>
 
-<section class="section">
+<section class="section hide-mobile">
   <div class="container">
     <p class="section-eyebrow">From the Blog</p>
     <h2 class="heading-2 mb-4">Latest Updates</h2>

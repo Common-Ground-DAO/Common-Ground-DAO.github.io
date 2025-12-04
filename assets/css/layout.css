@@ -79,8 +79,16 @@ header .logo img {
 
 /* Mobile Navigation */
 @media (max-width: 768px) {
-  .burger-menu {
-    display: block;
+  header {
+    display: none;
+  }
+
+  .hide-mobile {
+    display: none !important;
+  }
+
+  .show-mobile-only {
+    display: inline-flex !important;
   }
 
   .nav-links {
