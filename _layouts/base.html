@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title | default: "Common Ground" }}</title>
+  {% assign cache_bust = site.github.build_revision | default: site.time | date: '%s' %}
   {% include head.html %}
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <script src="/assets/js/theme-toggle.js"></script>
+  <link rel="stylesheet" href="/assets/css/main.css?v={{ cache_bust }}">
+  <script src="/assets/js/theme-toggle.js?v={{ cache_bust }}"></script>
 </head>
 <body>
   <div class="page-frame">
@@ -17,9 +18,9 @@
     {% include footer.html %}
   </div>
   {% include brand-context-menu.html %}
-  <script src="/assets/js/mobile-nav.js"></script>
-  <script src="/assets/js/tabs.js"></script>
-  <script src="/assets/js/carousel.js"></script>
-  <script src="/assets/js/brand-menu.js"></script>
+  <script src="/assets/js/mobile-nav.js?v={{ cache_bust }}"></script>
+  <script src="/assets/js/tabs.js?v={{ cache_bust }}"></script>
+  <script src="/assets/js/carousel.js?v={{ cache_bust }}"></script>
+  <script src="/assets/js/brand-menu.js?v={{ cache_bust }}"></script>
 </body>
 </html> 
