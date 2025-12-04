@@ -118,23 +118,23 @@ layout: default
         <h2 class="heading-2 mb-4">Identity & Wallet</h2>
         <p class="lead mb-8">Our deep integration of wallets, tokens & digital identities empowers ecosytems of communities to connect in a trusted, self-sovereign way.</p>
         <div class="feature-list mb-6">
-          <span class="feature-list-item feature-list-item-highlight">LUKSO 👑</span>
-          <span class="feature-list-item feature-list-item-highlight">Fuel 👑</span>
-          <span class="feature-list-item">Arbitrum</span>
-          <span class="feature-list-item">Avalanche</span>
-          <span class="feature-list-item">Base</span>
-          <span class="feature-list-item">BSC</span>
-          <span class="feature-list-item">Cardano</span>
-          <span class="feature-list-item">Ethereum</span>
-          <span class="feature-list-item">Fantom</span>
-          <span class="feature-list-item">Gnosis</span>
-          <span class="feature-list-item">Linea</span>
-          <span class="feature-list-item">Near</span>
-          <span class="feature-list-item">Optimism</span>
-          <span class="feature-list-item">Polygon</span>
-          <span class="feature-list-item">Scroll</span>
-          <span class="feature-list-item">Solana</span>
-          <span class="feature-list-item">zkSync</span>
+          <span class="feature-list-item feature-list-item-highlight"><img src="/assets/images/chains/lukso.png" alt="" class="chain-icon">LUKSO 👑</span>
+          <span class="feature-list-item feature-list-item-highlight"><img src="/assets/images/chains/fuel.png" alt="" class="chain-icon">Fuel 👑</span>
+          <span class="feature-list-item"><img src="/assets/images/chains/arbitrum.png" alt="" class="chain-icon">Arbitrum</span>
+          <span class="feature-list-item"><img src="/assets/images/chains/avalanche.png" alt="" class="chain-icon">Avalanche</span>
+          <span class="feature-list-item"><img src="/assets/images/chains/base.png" alt="" class="chain-icon">Base</span>
+          <span class="feature-list-item"><img src="/assets/images/chains/bsc.png" alt="" class="chain-icon">BSC</span>
+          <span class="feature-list-item"><img src="/assets/images/chains/cardano.png" alt="" class="chain-icon">Cardano</span>
+          <span class="feature-list-item"><img src="/assets/images/chains/ethereum.png" alt="" class="chain-icon">Ethereum</span>
+          <span class="feature-list-item"><img src="/assets/images/chains/fantom.png" alt="" class="chain-icon">Fantom</span>
+          <span class="feature-list-item"><img src="/assets/images/chains/gnosis.png" alt="" class="chain-icon">Gnosis</span>
+          <span class="feature-list-item"><img src="/assets/images/chains/linea.png" alt="" class="chain-icon">Linea</span>
+          <span class="feature-list-item"><img src="/assets/images/chains/near.png" alt="" class="chain-icon">Near</span>
+          <span class="feature-list-item"><img src="/assets/images/chains/optimism.png" alt="" class="chain-icon">Optimism</span>
+          <span class="feature-list-item"><img src="/assets/images/chains/polygon.png" alt="" class="chain-icon">Polygon</span>
+          <span class="feature-list-item"><img src="/assets/images/chains/scroll.png" alt="" class="chain-icon">Scroll</span>
+          <span class="feature-list-item"><img src="/assets/images/chains/solana.png" alt="" class="chain-icon">Solana</span>
+          <span class="feature-list-item"><img src="/assets/images/chains/zksync.png" alt="" class="chain-icon">zkSync</span>
         </div>
         <p class="text-secondary text-sm">Supporting over 16 chains</p>
       </div>
