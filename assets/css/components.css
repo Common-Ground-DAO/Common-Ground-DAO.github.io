@@ -577,6 +577,19 @@
   }
 }
 
+@keyframes ticker-scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.ticker-track-reverse {
+  animation: ticker-scroll-reverse 40s linear infinite;
+}
+
 /* Video Embed (YouTube) */
 .video-embed {
   position: relative;
