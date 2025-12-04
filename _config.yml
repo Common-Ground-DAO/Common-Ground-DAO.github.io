@@ -21,7 +21,7 @@ youtube_video_id: "yMpYiRUlIrI"
 actions:
   launch:
     label: "Launch"
-    text: "Join thousands of communities already building on the platform."
+    text: "Join thousands of communities already building on Common Ground."
     button: "Launch App"
   contribute:
     label: "Contribute"

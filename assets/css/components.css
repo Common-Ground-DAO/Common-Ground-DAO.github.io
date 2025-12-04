@@ -44,6 +44,38 @@
   border-radius: var(--radius-full);
 }
 
+/* CTA Button - Juicy 3D style */
+.btn-cta {
+  background: linear-gradient(180deg, #3a9eef 0%, #1e88e5 50%, #1976d2 100%);
+  color: #fff;
+  font-weight: var(--font-semibold);
+  border: none;
+  box-shadow:
+    0 4px 0 #1565c0,
+    0 6px 8px rgba(30, 136, 229, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 0;
+}
+
+.btn-cta:hover {
+  background: linear-gradient(180deg, #4dabf5 0%, #2196f3 50%, #1e88e5 100%);
+  box-shadow:
+    0 4px 0 #1565c0,
+    0 8px 12px rgba(30, 136, 229, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-cta:active {
+  top: 3px;
+  box-shadow:
+    0 1px 0 #1565c0,
+    0 2px 4px rgba(30, 136, 229, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
 /* Cards */
 .card {
   background: var(--color-background);
