@@ -15,7 +15,7 @@ layout: default
     <h1 class="heading-1 mb-6">{{ site.description }}</h1>
     <p class="lead max-w-2xl mb-8">{{ site.explainer }}</p>
 
-    <a href="{{ site.app_url }}" class="btn btn-primary btn-lg btn-pill show-mobile-only mb-6" target="_blank">Launch App</a>
+    <a href="{{ site.app_url }}" class="btn btn-cta btn-lg btn-pill show-mobile-only mb-6" target="_blank">Launch App</a>
 
     <div class="action-box hide-mobile">
       <div class="action-tabs">
