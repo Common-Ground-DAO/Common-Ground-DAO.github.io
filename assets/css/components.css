@@ -520,10 +520,15 @@
   display: flex;
   gap: var(--space-3);
   width: max-content;
+  -webkit-animation: ticker-scroll 40s linear infinite;
   animation: ticker-scroll 40s linear infinite;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .ticker-track:hover {
+  -webkit-animation-play-state: paused;
   animation-play-state: paused;
 }
 
@@ -542,8 +547,9 @@
 
 .ticker-item img {
   height: 135px;
-  width: auto;
+  width: 240px; /* mqdefault.jpg is 320x180, scaled to 135px height = 240px width */
   display: block;
+  object-fit: cover;
 }
 
 .ticker-play-icon {
@@ -568,25 +574,52 @@
   opacity: 1;
 }
 
-@keyframes ticker-scroll {
+@-webkit-keyframes ticker-scroll {
   0% {
-    transform: translateX(0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-50%);
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes ticker-scroll {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@-webkit-keyframes ticker-scroll-reverse {
+  0% {
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes ticker-scroll-reverse {
   0% {
-    transform: translateX(-50%);
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
   }
   100% {
-    transform: translateX(0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 .ticker-track-reverse {
+  -webkit-animation: ticker-scroll-reverse 40s linear infinite;
   animation: ticker-scroll-reverse 40s linear infinite;
 }
 

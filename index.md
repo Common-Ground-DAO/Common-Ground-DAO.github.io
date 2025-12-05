@@ -108,13 +108,13 @@ layout: default
   <div class="ticker-track">
     {% for video_id in site.community_videos %}
     <a href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" class="ticker-item">
-      <img src="https://img.youtube.com/vi/{{ video_id }}/mqdefault.jpg" alt="Community video" loading="lazy">
+      <img src="https://img.youtube.com/vi/{{ video_id }}/mqdefault.jpg" alt="Community video" width="240" height="135">
       <span class="ticker-play-icon">▶</span>
     </a>
     {% endfor %}
     {% for video_id in site.community_videos %}
     <a href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" class="ticker-item">
-      <img src="https://img.youtube.com/vi/{{ video_id }}/mqdefault.jpg" alt="Community video" loading="lazy">
+      <img src="https://img.youtube.com/vi/{{ video_id }}/mqdefault.jpg" alt="Community video" width="240" height="135">
       <span class="ticker-play-icon">▶</span>
     </a>
     {% endfor %}
@@ -252,13 +252,13 @@ layout: default
   <div class="ticker-track ticker-track-reverse">
     {% for video_id in site.podcast_videos %}
     <a href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" class="ticker-item">
-      <img src="https://img.youtube.com/vi/{{ video_id }}/mqdefault.jpg" alt="Podcast video" loading="lazy">
+      <img src="https://img.youtube.com/vi/{{ video_id }}/mqdefault.jpg" alt="Podcast video" width="240" height="135">
       <span class="ticker-play-icon">▶</span>
     </a>
     {% endfor %}
     {% for video_id in site.podcast_videos %}
     <a href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" class="ticker-item">
-      <img src="https://img.youtube.com/vi/{{ video_id }}/mqdefault.jpg" alt="Podcast video" loading="lazy">
+      <img src="https://img.youtube.com/vi/{{ video_id }}/mqdefault.jpg" alt="Podcast video" width="240" height="135">
       <span class="ticker-play-icon">▶</span>
     </a>
     {% endfor %}
