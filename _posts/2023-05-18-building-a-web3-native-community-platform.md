@@ -7,7 +7,7 @@ featured_image: /assets/images/blog/building-web3-native-community-platform.webp
 
 <section class="section">
   <div class="container">
-    <p class="text-secondary mb-4">May 18, 2023 · Florian</p>
+    <p class="text-secondary mb-4">May 18, 2023</p>
     <h1 class="heading-2 mb-6">{{ page.title }}</h1>
 
     <div class="post-content">

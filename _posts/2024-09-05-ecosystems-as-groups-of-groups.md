@@ -7,7 +7,7 @@ featured_image: /assets/images/blog/common-ground-joins-lsp-grants-2.avif
 
 <section class="section">
   <div class="container">
-    <p class="text-secondary mb-4">September 5, 2024 · Florian</p>
+    <p class="text-secondary mb-4">September 5, 2024</p>
     <h1 class="heading-2 mb-6">{{ page.title }}</h1>
 
     <div class="post-content">

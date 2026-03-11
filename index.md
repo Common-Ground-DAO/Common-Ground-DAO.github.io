@@ -178,17 +178,6 @@ layout: default
   </div>
 </section>
 
-<section class="section-flush hide-mobile">
-  <div class="video-embed">
-    <iframe
-      src="https://www.youtube-nocookie.com/embed/{{ site.youtube_video_id }}?autoplay=1&mute=1&controls=1&loop=1&playlist={{ site.youtube_video_id }}"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>
-  </div>
-</section>
-
 <section class="section hide-mobile">
   <div class="container">
     <div class="content-split">
@@ -245,23 +234,6 @@ layout: default
         <span class="stat-label">Live Streams</span>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="section-flush hide-mobile video-ticker">
-  <div class="ticker-track ticker-track-reverse">
-    {% for video_id in site.podcast_videos %}
-    <a href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" class="ticker-item">
-      <img src="https://img.youtube.com/vi/{{ video_id }}/mqdefault.jpg" alt="Podcast video" width="240" height="135">
-      <span class="ticker-play-icon">▶</span>
-    </a>
-    {% endfor %}
-    {% for video_id in site.podcast_videos %}
-    <a href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" class="ticker-item">
-      <img src="https://img.youtube.com/vi/{{ video_id }}/mqdefault.jpg" alt="Podcast video" width="240" height="135">
-      <span class="ticker-play-icon">▶</span>
-    </a>
-    {% endfor %}
   </div>
 </section>
 

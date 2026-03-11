@@ -7,7 +7,7 @@ featured_image: /assets/images/blog/roadmap-q2-2023.webp
 
 <section class="section">
   <div class="container">
-    <p class="text-secondary mb-4">March 20, 2023 · Florian Glatz</p>
+    <p class="text-secondary mb-4">March 20, 2023</p>
     <h1 class="heading-2 mb-6">{{ page.title }}</h1>
 
     <div class="post-content">

@@ -7,7 +7,7 @@ featured_image: /assets/images/blog/web3-social-roundup-1.avif
 
 <section class="section">
   <div class="container">
-    <p class="text-secondary mb-4">October 13, 2023 · Florian</p>
+    <p class="text-secondary mb-4">October 13, 2023</p>
     <h1 class="heading-2 mb-6">{{ page.title }}</h1>
 
     <div class="post-content">
